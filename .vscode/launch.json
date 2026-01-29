@@ -5,12 +5,14 @@
       "name": "Home Assistant",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/run_ha.py",
-      "args": [],
+      "module": "homeassistant",
+      "args": [
+        "--config",
+        "${workspaceFolder}/config",
+        "--debug",
+        "--skip-pip"
+      ],
       "justMyCode": false,
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}"
-      },
       "console": "integratedTerminal"
     },
     {

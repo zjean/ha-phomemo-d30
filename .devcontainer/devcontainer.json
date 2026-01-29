@@ -2,7 +2,7 @@
   "name": "Home Assistant Development",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "forwardPorts": [8123],
-  "postCreateCommand": "pip install -r requirements_dev.txt",
+  "postCreateCommand": "pip install -r requirements_dev.txt && pip install homeassistant",
   "customizations": {
     "vscode": {
       "extensions": [
