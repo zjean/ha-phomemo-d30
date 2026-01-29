@@ -81,6 +81,7 @@ class MockPhomemoDriver(PhomemoDriver):
 
         Raises:
             FatalError: If not connected or print fails
+            RecoverableError: If simulated failure occurs
         """
         if not self._connected:
             raise FatalError("Mock driver not connected")
@@ -94,6 +95,12 @@ class MockPhomemoDriver(PhomemoDriver):
 
         # Simulate printing delay
         await asyncio.sleep(self._print_delay)
+
+        # Simulate random failures if failure_rate is set
+        if self._failure_rate > 0:
+            import random
+            if random.random() < self._failure_rate:
+                raise RecoverableError(f"Simulated print failure (failure_rate={self._failure_rate})")
 
         # Save image with timestamp
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
