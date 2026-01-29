@@ -5,7 +5,6 @@ from io import BytesIO
 import pytest
 from PIL import Image
 
-from custom_components.phomemo_d30.const import JOB_QUEUED, JOB_PRINTING, JOB_COMPLETED
 from custom_components.phomemo_d30.models import PrintJob, JobStatus
 
 
