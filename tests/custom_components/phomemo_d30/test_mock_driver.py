@@ -8,7 +8,7 @@ from PIL import Image
 
 from custom_components.phomemo_d30.models import PrintJob
 from custom_components.phomemo_d30.phomemo.driver import MockPhomemoDriver
-from custom_components.phomemo_d30.phomemo.exceptions import FatalError
+from custom_components.phomemo_d30.phomemo.exceptions import FatalError, RecoverableError
 
 
 def create_test_image():
@@ -114,3 +114,28 @@ async def test_mock_driver_multiple_prints():
 
         saved_files = list(Path(tmpdir).glob("*.png"))
         assert len(saved_files) == 3
+
+
+@pytest.mark.asyncio
+async def test_mock_driver_failure_rate():
+    """Test mock driver failure rate simulation."""
+    with TemporaryDirectory() as tmpdir:
+        # Test with 100% failure rate
+        driver = MockPhomemoDriver(
+            save_path=tmpdir,
+            print_delay=0.1,
+            failure_rate=1.0,
+        )
+
+        await driver.connect()
+
+        img = create_test_image()
+        job = PrintJob(image=img, width=50, height=30)
+
+        # Should always fail with 100% failure rate
+        with pytest.raises(RecoverableError, match="Simulated print failure"):
+            await driver.print(job)
+
+        # No files should be saved when print fails
+        saved_files = list(Path(tmpdir).glob("*.png"))
+        assert len(saved_files) == 0

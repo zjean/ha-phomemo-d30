@@ -1,13 +1,14 @@
 """Phomemo printer drivers."""
 import asyncio
 import logging
+import random
 from abc import ABC, abstractmethod
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
 from ..models import PrintJob
-from .exceptions import FatalError
+from .exceptions import FatalError, RecoverableError
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -98,7 +99,6 @@ class MockPhomemoDriver(PhomemoDriver):
 
         # Simulate random failures if failure_rate is set
         if self._failure_rate > 0:
-            import random
             if random.random() < self._failure_rate:
                 raise RecoverableError(f"Simulated print failure (failure_rate={self._failure_rate})")
 
