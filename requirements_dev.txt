@@ -1,0 +1,6 @@
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-homeassistant-custom-component==0.13.87
+black==23.12.1
+ruff==0.1.9
+Pillow==10.1.0
