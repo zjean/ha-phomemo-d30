@@ -1,0 +1,29 @@
+# Home Assistant Configuration for Development
+
+homeassistant:
+  name: Phomemo Dev
+  latitude: 52.3676
+  longitude: 4.9041
+  elevation: 0
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+
+# Enable logging
+logger:
+  default: info
+  logs:
+    custom_components.phomemo_d30: debug
+
+# Enable frontend
+frontend:
+
+# Enable HTTP
+http:
+
+# Enable MQTT (required for integration)
+mqtt:
+  broker: localhost
+  port: 1883
+
+# Load custom integration
+# The integration will be loaded from custom_components/phomemo_d30
