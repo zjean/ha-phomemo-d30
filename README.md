@@ -287,4 +287,6 @@ cat custom_components/phomemo_d30/manifest.json | python -m json.tool
 
 ## License
 
-MIT License
+GPL-3.0 License
+
+This project includes code adapted from [phomemo-tools](https://github.com/vivier/phomemo-tools) by Laurent Vivier, which is licensed under GPL-3.0.
