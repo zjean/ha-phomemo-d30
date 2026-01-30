@@ -55,6 +55,32 @@ async def test_form_mock_mode(hass: HomeAssistant):
     assert result["data"]["mqtt_topic"] == "homeassistant/phomemo/print"
 
 
+async def test_form_bluetooth_mode_no_devices(hass: HomeAssistant):
+    """Test config flow aborts when no Bluetooth devices found."""
+    # Start flow
+    result = await hass.config_entries.flow.async_init(
+        DOMAIN,
+        context={"source": config_entries.SOURCE_USER},
+    )
+
+    # Mock empty bluetooth discovery
+    mock_bluetooth = MagicMock()
+    mock_bluetooth.async_discovered_service_info.return_value = []
+
+    # Select bluetooth mode - should abort with no devices
+    with patch.dict(
+        "sys.modules",
+        {"homeassistant.components.bluetooth": mock_bluetooth},
+    ):
+        result = await hass.config_entries.flow.async_configure(
+            result["flow_id"],
+            user_input={"mode": MODE_BLUETOOTH},
+        )
+
+    assert result["type"] == FlowResultType.ABORT
+    assert result["reason"] == "no_devices_found"
+
+
 async def test_form_bluetooth_mode_with_devices(hass: HomeAssistant):
     """Test config flow for bluetooth mode with discovered devices."""
     # Mock bluetooth service info
