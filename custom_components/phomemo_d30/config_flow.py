@@ -80,6 +80,10 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             if not user_input.get(CONF_MQTT_TOPIC):
                 errors["base"] = "mqtt_topic_required"
             else:
+                # Set unique_id and check for existing entry
+                await self.async_set_unique_id(f"{DOMAIN}_mock")
+                self._abort_if_unique_id_configured()
+
                 # Create entry
                 return self.async_create_entry(
                     title="Phomemo D30 (Mock)",
@@ -155,12 +159,17 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             elif not user_input.get(CONF_BLUETOOTH_MAC):
                 errors["base"] = "bluetooth_mac_required"
             else:
+                # Set unique_id based on MAC address and check for existing entry
+                mac_address = user_input[CONF_BLUETOOTH_MAC]
+                await self.async_set_unique_id(f"{DOMAIN}_{mac_address}")
+                self._abort_if_unique_id_configured()
+
                 # Create entry
                 return self.async_create_entry(
                     title="Phomemo D30 (Bluetooth)",
                     data={
                         CONF_MODE: MODE_BLUETOOTH,
-                        CONF_BLUETOOTH_MAC: user_input[CONF_BLUETOOTH_MAC],
+                        CONF_BLUETOOTH_MAC: mac_address,
                         CONF_MQTT_TOPIC: user_input[CONF_MQTT_TOPIC],
                         CONF_DARKNESS: DEFAULT_DARKNESS,
                         CONF_RETRY_ATTEMPTS: DEFAULT_RETRY_ATTEMPTS,
