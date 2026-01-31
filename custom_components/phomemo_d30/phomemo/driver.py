@@ -107,6 +107,7 @@ class MockPhomemoDriver(PhomemoDriver):
         filename = f"print_{timestamp}_{job.id[:8]}.png"
         filepath = self._save_path / filename
 
-        job.image.save(filepath)
+        # Run blocking I/O in executor to avoid blocking event loop
+        await asyncio.to_thread(job.image.save, filepath)
 
         _LOGGER.info("Mock driver: saved print to %s", filepath)
