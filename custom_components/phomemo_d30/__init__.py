@@ -141,7 +141,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         except Exception as e:
             _LOGGER.error("Unexpected error processing MQTT message: %s", e, exc_info=True)
 
-    await mqtt.async_subscribe(hass, mqtt_topic, handle_mqtt_message, qos=1)
+    await mqtt.async_subscribe(hass, mqtt_topic, handle_mqtt_message, qos=1, encoding=None)
     _LOGGER.info("Subscribed to MQTT topic: %s", mqtt_topic)
 
     # Forward the setup to platforms (if any)
