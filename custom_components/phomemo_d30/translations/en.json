@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Phomemo D30 Setup",
+        "description": "Select printer driver type",
+        "data": {
+          "mode": "Driver Mode"
+        }
+      },
+      "mock": {
+        "title": "Mock Printer Configuration",
+        "description": "Configure test printer (saves images to disk)",
+        "data": {
+          "mqtt_topic": "MQTT Topic",
+          "mock_save_path": "Save Path",
+          "mock_print_delay": "Print Delay (seconds)"
+        }
+      },
+      "bluetooth": {
+        "title": "Bluetooth Printer Selection",
+        "description": "Select your Phomemo D30 printer",
+        "data": {
+          "bluetooth_mac": "Printer",
+          "mqtt_topic": "MQTT Topic"
+        }
+      }
+    },
+    "error": {
+      "mqtt_topic_required": "MQTT topic is required",
+      "bluetooth_mac_required": "Bluetooth device must be selected"
+    },
+    "abort": {
+      "already_configured": "This device is already configured",
+      "no_devices_found": "No Phomemo printers found. Make sure your D30 is powered on and Bluetooth is enabled.",
+      "bluetooth_not_available": "Bluetooth integration is not available"
+    }
+  }
+}

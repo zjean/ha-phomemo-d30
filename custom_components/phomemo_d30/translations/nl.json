@@ -1,0 +1,39 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Phomemo D30 Installatie",
+        "description": "Selecteer printer stuurprogramma type",
+        "data": {
+          "mode": "Stuurprogramma Modus"
+        }
+      },
+      "mock": {
+        "title": "Test Printer Configuratie",
+        "description": "Configureer test printer (slaat afbeeldingen op schijf op)",
+        "data": {
+          "mqtt_topic": "MQTT Onderwerp",
+          "mock_save_path": "Opslagpad",
+          "mock_print_delay": "Print Vertraging (seconden)"
+        }
+      },
+      "bluetooth": {
+        "title": "Bluetooth Printer Selectie",
+        "description": "Selecteer uw Phomemo D30 printer",
+        "data": {
+          "bluetooth_mac": "Printer",
+          "mqtt_topic": "MQTT Onderwerp"
+        }
+      }
+    },
+    "error": {
+      "mqtt_topic_required": "MQTT onderwerp is verplicht",
+      "bluetooth_mac_required": "Bluetooth apparaat moet geselecteerd worden"
+    },
+    "abort": {
+      "already_configured": "Dit apparaat is al geconfigureerd",
+      "no_devices_found": "Geen Phomemo printers gevonden. Zorg ervoor dat uw D30 is ingeschakeld en Bluetooth is geactiveerd.",
+      "bluetooth_not_available": "Bluetooth integratie is niet beschikbaar"
+    }
+  }
+}
