@@ -78,50 +78,61 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             # Check if payload is binary (raw image) or JSON
             payload_bytes = msg.payload if isinstance(msg.payload, bytes) else msg.payload.encode()
 
-            # Try to detect if it's a raw PNG
-            if payload_bytes.startswith(b'\x89PNG'):
-                _LOGGER.error(
-                    "Received raw PNG data instead of JSON payload. "
-                    "Please send JSON with base64-encoded image: "
-                    '{"image": "base64string...", "width": 50, "height": 30}'
-                )
-                return
-
-            # Parse JSON payload
-            try:
-                payload = json.loads(payload_bytes)
-            except json.JSONDecodeError as e:
-                _LOGGER.error(
-                    "Invalid JSON in MQTT message: %s. "
-                    "Expected format: {\"image\": \"base64...\", \"width\": 50, \"height\": 30}",
-                    e
-                )
-                return
-
-            # Validate required fields
-            if "image" not in payload:
-                _LOGGER.error("MQTT payload missing required 'image' field")
-                return
-
-            # Decode base64 image
             from PIL import Image
             from io import BytesIO
 
-            try:
-                image_data = base64.b64decode(payload["image"])
-                image = Image.open(BytesIO(image_data))
-            except Exception as e:
-                _LOGGER.error("Failed to decode image from base64: %s", e)
-                return
+            # Check if it's a raw image file (PNG, JPG, etc.)
+            if payload_bytes.startswith(b'\x89PNG') or payload_bytes.startswith(b'\xff\xd8\xff'):
+                # Raw image data - open directly
+                try:
+                    image = Image.open(BytesIO(payload_bytes))
+                    _LOGGER.info("Received raw image file (%s)", image.format)
+                except Exception as e:
+                    _LOGGER.error("Failed to open raw image data: %s", e)
+                    return
 
-            # Create print job
-            job = PrintJob(
-                image=image,
-                width=payload.get("width", 50),
-                height=payload.get("height", 30),
-                darkness=payload.get("darkness", entry.data.get("darkness", 5)),
-                rotate=payload.get("rotate", 0),
-            )
+                # Use defaults for missing metadata
+                job = PrintJob(
+                    image=image,
+                    width=50,
+                    height=30,
+                    darkness=entry.data.get("darkness", 5),
+                    rotate=0,
+                )
+            else:
+                # JSON payload with base64-encoded image
+                try:
+                    payload = json.loads(payload_bytes)
+                except json.JSONDecodeError as e:
+                    _LOGGER.error(
+                        "Invalid MQTT payload: not a valid image file or JSON. "
+                        "Send raw PNG/JPG file or JSON: {\"image\": \"base64...\", \"width\": 50, \"height\": 30}. "
+                        "Error: %s",
+                        e
+                    )
+                    return
+
+                # Validate required fields
+                if "image" not in payload:
+                    _LOGGER.error("MQTT JSON payload missing required 'image' field")
+                    return
+
+                # Decode base64 image
+                try:
+                    image_data = base64.b64decode(payload["image"])
+                    image = Image.open(BytesIO(image_data))
+                except Exception as e:
+                    _LOGGER.error("Failed to decode image from base64: %s", e)
+                    return
+
+                # Create print job with metadata from JSON
+                job = PrintJob(
+                    image=image,
+                    width=payload.get("width", 50),
+                    height=payload.get("height", 30),
+                    darkness=payload.get("darkness", entry.data.get("darkness", 5)),
+                    rotate=payload.get("rotate", 0),
+                )
 
             # Add to queue
             await queue.add_job(job)
