@@ -49,4 +49,4 @@ SERVICE_CLEAR_QUEUE = "clear_queue"
 SERVICE_RETRY_FAILED = "retry_failed"
 
 # Platforms
-PLATFORMS = ["sensor"]
+PLATFORMS = []
