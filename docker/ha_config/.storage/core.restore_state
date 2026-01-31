@@ -1,0 +1,1754 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2026-01-31T12:23:04.064247+00:00","last_reported":"2026-01-31T12:23:04.064247+00:00","last_updated":"2026-01-31T12:23:04.064247+00:00","context":{"id":"01KGA03F40A5A7WHPYYAQ6MTP7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"event.backup_automatic_backup","state":"unknown","attributes":{"event_types":["completed","failed","in_progress"],"event_type":null,"friendly_name":"Backup Automatic backup"},"last_changed":"2026-01-31T12:23:04.104264+00:00","last_reported":"2026-01-31T12:23:04.104264+00:00","last_updated":"2026-01-31T12:23:04.104264+00:00","context":{"id":"01KGA03F58ZVZBV6AA3SS66TMR","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "last_event_type": null,
+        "last_event_attributes": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"person.janwiebe","state":"unknown","attributes":{"editable":true,"id":"janwiebe","device_trackers":[],"user_id":"3ea03e530497429d949a7d8777b81c69","friendly_name":"janwiebe"},"last_changed":"2026-01-31T12:23:04.198521+00:00","last_reported":"2026-01-31T12:23:05.328095+00:00","last_updated":"2026-01-31T12:23:05.328095+00:00","context":{"id":"01KGA03GBGWH012V4BDCPANF15","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2026-01-31T12:23:04.347268+00:00","last_reported":"2026-01-31T12:23:04.347268+00:00","last_updated":"2026-01-31T12:23:04.347268+00:00","context":{"id":"01KGA03FCVSVENFC3HZBH60KZS","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.water_sensor01_water_leak","state":"off","attributes":{"device_class":"moisture","friendly_name":"water_sensor01 Moisture"},"last_changed":"2026-01-31T12:23:41.458046+00:00","last_reported":"2026-01-31T12:23:41.458046+00:00","last_updated":"2026-01-31T12:23:41.458046+00:00","context":{"id":"01KGA04KMJCGFZQTXBWAW4AZW6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.water_sensor01_battery_low","state":"off","attributes":{"device_class":"battery","friendly_name":"water_sensor01 Battery"},"last_changed":"2026-01-31T12:23:41.457932+00:00","last_reported":"2026-01-31T12:23:41.457932+00:00","last_updated":"2026-01-31T12:23:41.457932+00:00","context":{"id":"01KGA04KMHMYMWMHJX7PZBP8HQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.zigbee2mqtt_bridge_restart","state":"unknown","attributes":{"device_class":"restart","friendly_name":"Zigbee2MQTT Bridge Restart"},"last_changed":"2026-01-31T12:23:06.300102+00:00","last_reported":"2026-01-31T12:23:06.300102+00:00","last_updated":"2026-01-31T12:23:06.300102+00:00","context":{"id":"01KGA03H9W3W6YVZ861M3XX13K","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_rockrobo_reset_main_filter_consumable","state":"unavailable","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Main Filter Consumable"},"last_changed":"2026-01-31T12:23:05.309024+00:00","last_reported":"2026-01-31T12:23:05.628410+00:00","last_updated":"2026-01-31T12:23:05.628410+00:00","context":{"id":"01KGA03GMW19BJ8AH2PBBJR3NA","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.trapkast_deur_contact","state":"off","attributes":{"device_class":"door","friendly_name":"trapkast_deur Door"},"last_changed":"2026-01-31T12:23:41.464007+00:00","last_reported":"2026-01-31T12:23:41.464007+00:00","last_updated":"2026-01-31T12:23:41.464007+00:00","context":{"id":"01KGA04KMR9S151EXP526QKYVD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.switch_badkamer_beneden_kast_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"switch_badkamer_beneden_kast Identify"},"last_changed":"2026-01-31T12:23:06.299441+00:00","last_reported":"2026-01-31T12:23:06.299441+00:00","last_updated":"2026-01-31T12:23:06.299441+00:00","context":{"id":"01KGA03H9VNVEX816DYVR30B51","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_rockrobo_reset_sensor_cleaning_consumable","state":"unavailable","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Sensor cleaning Consumable"},"last_changed":"2026-01-31T12:23:05.310704+00:00","last_reported":"2026-01-31T12:23:05.628445+00:00","last_updated":"2026-01-31T12:23:05.628445+00:00","context":{"id":"01KGA03GMWFMJ4K71TEX9SS9SW","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.motion_sensor01_occupancy","state":"off","attributes":{"device_class":"occupancy","friendly_name":"motion_sensor01 Occupancy"},"last_changed":"2026-01-31T12:23:41.469213+00:00","last_reported":"2026-01-31T12:23:41.469213+00:00","last_updated":"2026-01-31T12:23:41.469213+00:00","context":{"id":"01KGA04KMXDS6T9T7J5M0GTNGM","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.switch_tuinhuis_kachel_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"switch_tuinhuis_kachel Identify"},"last_changed":"2026-01-31T12:23:06.298699+00:00","last_reported":"2026-01-31T12:23:06.298699+00:00","last_updated":"2026-01-31T12:23:06.298699+00:00","context":{"id":"01KGA03H9TZZXSBK0XSKMGRGYX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.switch_kantoor_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"switch_kantoor Identify"},"last_changed":"2026-01-31T12:23:06.300832+00:00","last_reported":"2026-01-31T12:23:06.300832+00:00","last_updated":"2026-01-31T12:23:06.300832+00:00","context":{"id":"01KGA03H9W8GDVPMZ00TG7FPRC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.motion_sensor02_occupancy","state":"off","attributes":{"device_class":"occupancy","friendly_name":"motion_sensor02 Occupancy"},"last_changed":"2026-01-31T12:23:41.477682+00:00","last_reported":"2026-01-31T12:23:41.477682+00:00","last_updated":"2026-01-31T12:23:41.477682+00:00","context":{"id":"01KGA04KN590SCTCAKCS2H6FGS","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.switch_tuinhuis_koelkast_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"switch_tuinhuis_koelkast Identify"},"last_changed":"2026-01-31T12:23:06.300320+00:00","last_reported":"2026-01-31T12:23:06.300320+00:00","last_updated":"2026-01-31T12:23:06.300320+00:00","context":{"id":"01KGA03H9WT4XV29882JX1GV0R","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.lamp_overloop_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"lamp_overloop Identify"},"last_changed":"2026-01-31T12:23:06.299364+00:00","last_reported":"2026-01-31T12:23:06.299364+00:00","last_updated":"2026-01-31T12:23:06.299364+00:00","context":{"id":"01KGA03H9VAAW01K1JEJS89EPP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.motion_sensor03_occupancy","state":"off","attributes":{"device_class":"occupancy","friendly_name":"motion_sensor03 Occupancy"},"last_changed":"2026-01-31T12:23:41.478876+00:00","last_reported":"2026-01-31T12:23:41.478876+00:00","last_updated":"2026-01-31T12:23:41.478876+00:00","context":{"id":"01KGA04KN6KR2FG0RYS74SBP3P","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.ikea_remote01_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"ikea_remote01 Identify"},"last_changed":"2026-01-31T12:23:06.299449+00:00","last_reported":"2026-01-31T12:23:06.299449+00:00","last_updated":"2026-01-31T12:23:06.299449+00:00","context":{"id":"01KGA03H9V5VWC2EZZPYFQ2Q8Q","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_punycautiousparrot_reset_main_brush_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Main Brush Consumable"},"last_changed":"2026-01-31T12:23:06.303692+00:00","last_reported":"2026-01-31T12:23:06.303692+00:00","last_updated":"2026-01-31T12:23:06.303692+00:00","context":{"id":"01KGA03H9ZNTVB65V4GCZB44B7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.badkamer_beneden_buitendeur_contact","state":"off","attributes":{"device_class":"door","friendly_name":"badkamer_beneden_buitendeur Door"},"last_changed":"2026-01-31T12:23:41.486074+00:00","last_reported":"2026-01-31T12:23:41.486074+00:00","last_updated":"2026-01-31T12:23:41.486074+00:00","context":{"id":"01KGA04KNEJFXX85CBGVZ9J1ZZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.switch_tuinhuis_boiler_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"switch_tuinhuis_boiler Identify"},"last_changed":"2026-01-31T12:23:06.298751+00:00","last_reported":"2026-01-31T12:23:06.298751+00:00","last_updated":"2026-01-31T12:23:06.298751+00:00","context":{"id":"01KGA03H9TMJMYMRM304B2PWF8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_punycautiousparrot_reset_right_brush_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Right Brush Consumable"},"last_changed":"2026-01-31T12:23:06.303842+00:00","last_reported":"2026-01-31T12:23:06.303842+00:00","last_updated":"2026-01-31T12:23:06.303842+00:00","context":{"id":"01KGA03H9ZNAD8MWJ02GCYHYCZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.badkamer_beneden_raam_contact","state":"off","attributes":{"device_class":"door","friendly_name":"badkamer_beneden_raam Door"},"last_changed":"2026-01-31T12:23:41.490410+00:00","last_reported":"2026-01-31T12:23:41.490410+00:00","last_updated":"2026-01-31T12:23:41.490410+00:00","context":{"id":"01KGA04KNJ7PA4ET1M0JHN83TF","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.ikea_lamp_slaapkamer_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"ikea_lamp_slaapkamer Identify"},"last_changed":"2026-01-31T12:23:06.300138+00:00","last_reported":"2026-01-31T12:23:06.300138+00:00","last_updated":"2026-01-31T12:23:06.300138+00:00","context":{"id":"01KGA03H9WGADVR73SQJWQE4Z1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_punycautiousparrot_reset_main_filter_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Main Filter Consumable"},"last_changed":"2026-01-31T12:23:06.303717+00:00","last_reported":"2026-01-31T12:23:06.303717+00:00","last_updated":"2026-01-31T12:23:06.303717+00:00","context":{"id":"01KGA03H9ZB9Q22K9TR2QJE92H","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.keuken_voordeur_contact","state":"off","attributes":{"device_class":"door","friendly_name":"keuken_voordeur Door"},"last_changed":"2026-01-31T12:23:41.490767+00:00","last_reported":"2026-01-31T12:23:41.490767+00:00","last_updated":"2026-01-31T12:23:41.490767+00:00","context":{"id":"01KGA04KNJE431JSKRHQH7R7GJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.bed_schakelaar_marielle_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"bed_schakelaar_marielle Identify"},"last_changed":"2026-01-31T12:23:06.298863+00:00","last_reported":"2026-01-31T12:23:06.298863+00:00","last_updated":"2026-01-31T12:23:06.298863+00:00","context":{"id":"01KGA03H9TP4M3V1EEK18K5VQY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_punycautiousparrot_reset_sensor_cleaning_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Sensor Cleaning Consumable"},"last_changed":"2026-01-31T12:23:06.303673+00:00","last_reported":"2026-01-31T12:23:06.303673+00:00","last_updated":"2026-01-31T12:23:06.303673+00:00","context":{"id":"01KGA03H9ZW4ZNZXYJBTTDFV7R","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.uitbouw_tuindeur_links_contact","state":"off","attributes":{"device_class":"door","friendly_name":"uitbouw_tuindeur_links Door"},"last_changed":"2026-01-31T12:23:41.491535+00:00","last_reported":"2026-01-31T12:23:41.491535+00:00","last_updated":"2026-01-31T12:23:41.491535+00:00","context":{"id":"01KGA04KNKYSMNNV6N02XAQXJ0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.bed_schakelaar_janwiebe_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"bed_schakelaar_janwiebe Identify"},"last_changed":"2026-01-31T12:23:06.300823+00:00","last_reported":"2026-01-31T12:23:06.300823+00:00","last_updated":"2026-01-31T12:23:06.300823+00:00","context":{"id":"01KGA03H9WPY7Z9WTB048SRA06","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.woonkamer_tuindeur_links_contact","state":"off","attributes":{"device_class":"door","friendly_name":"woonkamer_tuindeur_links Door"},"last_changed":"2026-01-31T12:23:41.491762+00:00","last_reported":"2026-01-31T12:23:41.491762+00:00","last_updated":"2026-01-31T12:23:41.491762+00:00","context":{"id":"01KGA04KNKJGW5ETE76C8RKT0V","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.lamp_kast_master_bedroom_identify","state":"unknown","attributes":{"device_class":"identify","friendly_name":"lamp_kast_master_bedroom Identify"},"last_changed":"2026-01-31T12:23:06.299489+00:00","last_reported":"2026-01-31T12:23:06.299489+00:00","last_updated":"2026-01-31T12:23:06.299489+00:00","context":{"id":"01KGA03H9VNEY5X4BH1YF6JVAY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.woonkamer_tuindeur_rechts_contact","state":"off","attributes":{"device_class":"door","friendly_name":"woonkamer_tuindeur_rechts Door"},"last_changed":"2026-01-31T12:23:41.491966+00:00","last_reported":"2026-01-31T12:23:41.491966+00:00","last_updated":"2026-01-31T12:23:41.491966+00:00","context":{"id":"01KGA04KNKPYR3MGSSGVXTDNT1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.uitbouw_steegdeur_contact","state":"off","attributes":{"device_class":"door","friendly_name":"uitbouw_steegdeur Door"},"last_changed":"2026-01-31T12:23:41.492321+00:00","last_reported":"2026-01-31T12:23:41.492321+00:00","last_updated":"2026-01-31T12:23:41.492321+00:00","context":{"id":"01KGA04KNMGRNCYMK0M659YNV2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_l10pro_reset_main_brush_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Dreame L10 Pro Reset Main Brush Consumable"},"last_changed":"2026-01-31T12:23:06.304243+00:00","last_reported":"2026-01-31T12:23:06.304243+00:00","last_updated":"2026-01-31T12:23:06.304243+00:00","context":{"id":"01KGA03HA0CESZ39EBDRB6EDV1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.beweging_woonkamer_uitbouw_occupancy","state":"off","attributes":{"device_class":"occupancy","friendly_name":"beweging_woonkamer_uitbouw Occupancy"},"last_changed":"2026-01-31T12:23:41.510644+00:00","last_reported":"2026-01-31T12:23:41.510644+00:00","last_updated":"2026-01-31T12:23:41.510644+00:00","context":{"id":"01KGA04KP6A91X6F4P70J3FR63","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_l10pro_reset_right_brush_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Dreame L10 Pro Reset Right Brush Consumable"},"last_changed":"2026-01-31T12:23:06.304184+00:00","last_reported":"2026-01-31T12:23:06.304184+00:00","last_updated":"2026-01-31T12:23:06.304184+00:00","context":{"id":"01KGA03HA02B7YP9JTRPHVVSX1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.valetudo_l10pro_water_tank_attachment","state":"off","attributes":{"friendly_name":"Dreame L10 Pro Water tank attachment"},"last_changed":"2026-01-31T12:23:06.304382+00:00","last_reported":"2026-01-31T12:23:06.304382+00:00","last_updated":"2026-01-31T12:23:06.304382+00:00","context":{"id":"01KGA03HA07AW0D7H6CHJBYGTP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_l10pro_reset_main_filter_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Dreame L10 Pro Reset Main Filter Consumable"},"last_changed":"2026-01-31T12:23:06.304270+00:00","last_reported":"2026-01-31T12:23:06.304270+00:00","last_updated":"2026-01-31T12:23:06.304270+00:00","context":{"id":"01KGA03HA01MGXCV93M8S9XBFP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.valetudo_l10pro_mop_attachment","state":"off","attributes":{"friendly_name":"Dreame L10 Pro Mop attachment"},"last_changed":"2026-01-31T12:23:06.304612+00:00","last_reported":"2026-01-31T12:23:06.304612+00:00","last_updated":"2026-01-31T12:23:06.304612+00:00","context":{"id":"01KGA03HA07TKSZE3HXBDJTKQJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_l10pro_reset_sensor_cleaning_consumable","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Dreame L10 Pro Reset Sensor cleaning Consumable"},"last_changed":"2026-01-31T12:23:06.304227+00:00","last_reported":"2026-01-31T12:23:06.304227+00:00","last_updated":"2026-01-31T12:23:06.304227+00:00","context":{"id":"01KGA03HA0Z8274NNZFF7W9M1H","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"binary_sensor.zigbee2mqtt_bridge_connection_state","state":"on","attributes":{"device_class":"connectivity","friendly_name":"Zigbee2MQTT Bridge Connection state"},"last_changed":"2026-01-31T12:23:06.300493+00:00","last_reported":"2026-01-31T12:23:06.300493+00:00","last_updated":"2026-01-31T12:23:06.300493+00:00","context":{"id":"01KGA03H9WN3ASRTYE54XG0CQ5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_l10pro_reset_sensor_cleaning_consumable_2","state":"unknown","attributes":{"icon":"mdi:restore","friendly_name":"Dreame L10 Pro Reset Sensor Cleaning Consumable"},"last_changed":"2026-01-31T12:23:06.304071+00:00","last_reported":"2026-01-31T12:23:06.304071+00:00","last_updated":"2026-01-31T12:23:06.304071+00:00","context":{"id":"01KGA03HA082X3P6D614FZPE47","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_rockrobo_reset_main_brush_consumable","state":"unavailable","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Main Brush Consumable"},"last_changed":"2026-01-31T12:23:05.323522+00:00","last_reported":"2026-01-31T12:23:05.628458+00:00","last_updated":"2026-01-31T12:23:05.628458+00:00","context":{"id":"01KGA03GMWDGDXDCZ0T8TEAKEG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"button.valetudo_rockrobo_reset_right_brush_consumable","state":"unavailable","attributes":{"icon":"mdi:restore","friendly_name":"Valetudo V1 PunyCautiousParrot Reset Right Brush Consumable"},"last_changed":"2026-01-31T12:23:05.323765+00:00","last_reported":"2026-01-31T12:23:05.628468+00:00","last_updated":"2026-01-31T12:23:05.628468+00:00","context":{"id":"01KGA03GMW3CMMWVA4XX2D9J4M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.led_strip_slaapkamer","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6666,"min_mireds":150,"max_mireds":500,"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect","colorloop","stop_colorloop"],"supported_color_modes":["color_temp","xy"],"effect":null,"color_mode":null,"brightness":null,"color_temp_kelvin":null,"color_temp":null,"hs_color":null,"rgb_color":null,"xy_color":null,"friendly_name":"led_strip_slaapkamer","supported_features":44},"last_changed":"2026-01-31T12:23:41.492670+00:00","last_reported":"2026-01-31T12:23:41.492670+00:00","last_updated":"2026-01-31T12:23:41.492670+00:00","context":{"id":"01KGA04KNM28MEA52K6K30K0JQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.licht_slaapkamer","state":"on","attributes":{"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect"],"supported_color_modes":["brightness"],"effect":null,"color_mode":"brightness","brightness":1,"friendly_name":"licht_slaapkamer","supported_features":44},"last_changed":"2026-01-31T12:23:41.522398+00:00","last_reported":"2026-01-31T12:23:41.522398+00:00","last_updated":"2026-01-31T12:23:41.522398+00:00","context":{"id":"01KGA04KPJFWMBEJPZRKEDE746","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.ikea_lamp_slaapkamer","state":"on","attributes":{"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect"],"supported_color_modes":["brightness"],"effect":null,"color_mode":"brightness","brightness":1,"friendly_name":"ikea_lamp_slaapkamer","supported_features":44},"last_changed":"2026-01-31T12:23:41.506606+00:00","last_reported":"2026-01-31T12:23:41.506606+00:00","last_updated":"2026-01-31T12:23:41.506606+00:00","context":{"id":"01KGA04KP2Z1CAHJMYGY2YPAH2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.lamp_slaapkamer","state":"off","attributes":{"effect_list":["blink","breathe","okay","channel_change","candle","finish_effect","stop_effect","stop_hue_effect"],"supported_color_modes":["brightness"],"effect":null,"color_mode":null,"brightness":null,"friendly_name":"lamp_slaapkamer","supported_features":44},"last_changed":"2026-01-31T12:23:41.513469+00:00","last_reported":"2026-01-31T12:23:41.513469+00:00","last_updated":"2026-01-31T12:23:41.513469+00:00","context":{"id":"01KGA04KP9STPA0DB8WAXBJH3A","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.lamp_kast_master_bedroom","state":"on","attributes":{"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect"],"supported_color_modes":["brightness"],"effect":null,"color_mode":"brightness","brightness":2,"friendly_name":"lamp_kast_master_bedroom","supported_features":44},"last_changed":"2026-01-31T12:23:41.512562+00:00","last_reported":"2026-01-31T12:23:41.512562+00:00","last_updated":"2026-01-31T12:23:41.512562+00:00","context":{"id":"01KGA04KP86B4S1HF586RXTNNC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"light.lamp_overloop","state":"off","attributes":{"min_color_temp_kelvin":2202,"max_color_temp_kelvin":4000,"min_mireds":250,"max_mireds":454,"effect_list":["blink","breathe","okay","channel_change","finish_effect","stop_effect"],"supported_color_modes":["color_temp"],"effect":null,"color_mode":null,"brightness":null,"color_temp_kelvin":null,"color_temp":null,"hs_color":null,"rgb_color":null,"xy_color":null,"friendly_name":"lamp_overloop","supported_features":44},"last_changed":"2026-01-31T12:23:41.480397+00:00","last_reported":"2026-01-31T12:23:41.480397+00:00","last_updated":"2026-01-31T12:23:41.480397+00:00","context":{"id":"01KGA04KN8GK37ZNC4GD4DZRR6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"number.valetudo_l10pro_speaker_volume","state":"75","attributes":{"min":0.0,"max":100.0,"step":1.0,"mode":"auto","icon":"mdi:volume-source","friendly_name":"Dreame L10 Pro Speaker volume"},"last_changed":"2026-01-31T12:23:06.354629+00:00","last_reported":"2026-01-31T12:23:06.354629+00:00","last_updated":"2026-01-31T12:23:06.354629+00:00","context":{"id":"01KGA03HBJ73HD8Y25XJYTW7HJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 100.0,
+        "native_min_value": 0.0,
+        "native_step": 1.0,
+        "native_unit_of_measurement": null,
+        "native_value": 75
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"number.keuken_staande_vloerlamp_countdown","state":"0","attributes":{"min":0.0,"max":43200.0,"step":1.0,"mode":"auto","unit_of_measurement":"s","friendly_name":"Keuken staande vloerlamp Countdown"},"last_changed":"2026-01-31T12:23:34.924549+00:00","last_reported":"2026-01-31T12:23:34.924549+00:00","last_updated":"2026-01-31T12:23:34.924549+00:00","context":{"id":"01KGA04D8CFGP327NBWQ8A1092","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 43200.0,
+        "native_min_value": 0.0,
+        "native_step": 1.0,
+        "native_unit_of_measurement": "s",
+        "native_value": 0
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"number.keuken_lamp_keukenblad_countdown","state":"0","attributes":{"min":0.0,"max":43200.0,"step":1.0,"mode":"auto","unit_of_measurement":"s","friendly_name":"Keuken lamp keukenblad Countdown"},"last_changed":"2026-01-31T12:23:10.297312+00:00","last_reported":"2026-01-31T12:23:10.297312+00:00","last_updated":"2026-01-31T12:23:10.297312+00:00","context":{"id":"01KGA03N6SAJD131R6PW53W300","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 43200.0,
+        "native_min_value": 0.0,
+        "native_step": 1.0,
+        "native_unit_of_measurement": "s",
+        "native_value": 0
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"number.valetudo_punycautiousparrot_speaker_volume","state":"70","attributes":{"min":0.0,"max":100.0,"step":1.0,"mode":"auto","icon":"mdi:volume-source","friendly_name":"Valetudo V1 PunyCautiousParrot Speaker volume"},"last_changed":"2026-01-31T12:23:06.354802+00:00","last_reported":"2026-01-31T12:23:06.354802+00:00","last_updated":"2026-01-31T12:23:06.354802+00:00","context":{"id":"01KGA03HBJJT9FP31W40AA6KNP","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 100.0,
+        "native_min_value": 0.0,
+        "native_step": 1.0,
+        "native_unit_of_measurement": null,
+        "native_value": 70
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"number.keuken_lamp_deurbel_countdown","state":"0","attributes":{"min":0.0,"max":43200.0,"step":1.0,"mode":"auto","unit_of_measurement":"s","friendly_name":"Keuken_lamp_deurbel Countdown"},"last_changed":"2026-01-31T12:23:09.723896+00:00","last_reported":"2026-01-31T12:23:09.723896+00:00","last_updated":"2026-01-31T12:23:09.723896+00:00","context":{"id":"01KGA03MMVSZZERTDX19752FN8","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_max_value": 43200.0,
+        "native_min_value": 0.0,
+        "native_step": 1.0,
+        "native_unit_of_measurement": "s",
+        "native_value": 0
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.shp13_switch01_power_outage_memory","state":"restore","attributes":{"options":["on","off","restore"],"icon":"mdi:power-settings","friendly_name":"shp13_switch01 Power outage memory"},"last_changed":"2026-01-31T12:23:41.466224+00:00","last_reported":"2026-01-31T12:23:41.466224+00:00","last_updated":"2026-01-31T12:23:41.466224+00:00","context":{"id":"01KGA04KMTVKAT9EDHFF0CC13Y","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.shp13_switch01_indicator_mode","state":"off/on","attributes":{"options":["off","off/on","on/off"],"friendly_name":"shp13_switch01 Indicator mode"},"last_changed":"2026-01-31T12:23:41.466023+00:00","last_reported":"2026-01-31T12:23:41.466023+00:00","last_updated":"2026-01-31T12:23:41.466023+00:00","context":{"id":"01KGA04KMTY4W86FAYQX8HTQ8W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.led_strip_slaapkamer_color_power_on_behavior","state":"unknown","attributes":{"options":["initial","previous","customized"],"icon":"mdi:palette","friendly_name":"led_strip_slaapkamer Color power on behavior"},"last_changed":"2026-01-31T12:23:06.299235+00:00","last_reported":"2026-01-31T12:23:06.299235+00:00","last_updated":"2026-01-31T12:23:06.299235+00:00","context":{"id":"01KGA03H9VN9086PPA8QY1A9N4","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.shp13_switch02_power_outage_memory","state":"restore","attributes":{"options":["on","off","restore"],"icon":"mdi:power-settings","friendly_name":"shp13_switch02 Power outage memory"},"last_changed":"2026-01-31T12:23:34.102971+00:00","last_reported":"2026-01-31T12:23:34.102971+00:00","last_updated":"2026-01-31T12:23:34.102971+00:00","context":{"id":"01KGA04CEPZR661CAR7TWK3TRY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_tuinhuis_boiler_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"switch_tuinhuis_boiler Power-on behavior"},"last_changed":"2026-01-31T12:23:41.493073+00:00","last_reported":"2026-01-31T12:23:41.493073+00:00","last_updated":"2026-01-31T12:23:41.493073+00:00","context":{"id":"01KGA04KNNP5JF7DQMNZY0ADAJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.shp13_switch02_indicator_mode","state":"off/on","attributes":{"options":["off","off/on","on/off"],"friendly_name":"shp13_switch02 Indicator mode"},"last_changed":"2026-01-31T12:23:34.103231+00:00","last_reported":"2026-01-31T12:23:34.103231+00:00","last_updated":"2026-01-31T12:23:34.103231+00:00","context":{"id":"01KGA04CEQMMKXAFWN45EJM2MZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_badkamer_beneden_kast_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"switch_badkamer_beneden_kast Power-on behavior"},"last_changed":"2026-01-31T12:23:41.471667+00:00","last_reported":"2026-01-31T12:23:41.471667+00:00","last_updated":"2026-01-31T12:23:41.471667+00:00","context":{"id":"01KGA04KMZ3ZEG65CV8S0XC66K","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_tuinhuis_koelkast_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"switch_tuinhuis_koelkast Power-on behavior"},"last_changed":"2026-01-31T12:23:41.477226+00:00","last_reported":"2026-01-31T12:23:41.477226+00:00","last_updated":"2026-01-31T12:23:41.477226+00:00","context":{"id":"01KGA04KN5WZ2WP1XMHDXXEXF1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_mozaiek_lamp_power_on_behavior","state":"previous","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"keuken_mozaiek_lamp Power-on behavior"},"last_changed":"2026-01-31T12:23:41.504729+00:00","last_reported":"2026-01-31T12:23:41.504729+00:00","last_updated":"2026-01-31T12:23:41.504729+00:00","context":{"id":"01KGA04KP0ZJXQBTZMEHPV51J0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_mozaiek_lamp_indicator_mode","state":"unknown","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"keuken_mozaiek_lamp Indicator mode"},"last_changed":"2026-01-31T12:23:06.300294+00:00","last_reported":"2026-01-31T12:23:06.300294+00:00","last_updated":"2026-01-31T12:23:06.300294+00:00","context":{"id":"01KGA03H9W4GZ2ZSJR3JKS2EVG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.valetudo_l10pro_water","state":"medium","attributes":{"options":["low","medium","high"],"icon":"mdi:water-pump","friendly_name":"Dreame L10 Pro Water"},"last_changed":"2026-01-31T12:23:06.355542+00:00","last_reported":"2026-01-31T12:23:06.355542+00:00","last_updated":"2026-01-31T12:23:06.355542+00:00","context":{"id":"01KGA03HBK1T6VWGATVW187W7K","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.valetudo_l10pro_mode","state":"vacuum","attributes":{"options":["vacuum","mop","vacuum_and_mop"],"icon":"mdi:developer-board","friendly_name":"Dreame L10 Pro Mode"},"last_changed":"2026-01-31T12:23:06.355813+00:00","last_reported":"2026-01-31T12:23:06.355813+00:00","last_updated":"2026-01-31T12:23:06.355813+00:00","context":{"id":"01KGA03HBKA8M1E7SRE09ZJDB7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.valetudo_l10pro_fan","state":"medium","attributes":{"options":["low","medium","high","max"],"icon":"mdi:fan","friendly_name":"Dreame L10 Pro Fan"},"last_changed":"2026-01-31T12:23:06.356110+00:00","last_reported":"2026-01-31T12:23:06.356110+00:00","last_updated":"2026-01-31T12:23:06.356110+00:00","context":{"id":"01KGA03HBMHE0C8TP8YJ7AH48N","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_poort_power_on_behavior","state":"unknown","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"switch_poort Power-on behavior"},"last_changed":"2026-01-31T12:23:06.300148+00:00","last_reported":"2026-01-31T12:23:06.300148+00:00","last_updated":"2026-01-31T12:23:06.300148+00:00","context":{"id":"01KGA03H9WFQSGCW1KJT434VYW","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_tuinhuis_ledstrip_power_on_behavior","state":"unknown","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"switch_tuinhuis_ledstrip Power-on behavior"},"last_changed":"2026-01-31T12:23:06.298323+00:00","last_reported":"2026-01-31T12:23:06.298323+00:00","last_updated":"2026-01-31T12:23:06.298323+00:00","context":{"id":"01KGA03H9TMW4YCQTMXRWD525M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_tuinhuis_kachel_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"switch_tuinhuis_kachel Power-on behavior"},"last_changed":"2026-01-31T12:23:41.476635+00:00","last_reported":"2026-01-31T12:23:41.476635+00:00","last_updated":"2026-01-31T12:23:41.476635+00:00","context":{"id":"01KGA04KN4DY1Q9Y7AP15TMVBX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.zigbee2mqtt_bridge_log_level","state":"debug","attributes":{"options":["error","warning","info","debug"],"friendly_name":"Zigbee2MQTT Bridge Log level"},"last_changed":"2026-01-31T12:23:06.372647+00:00","last_reported":"2026-01-31T12:23:06.372647+00:00","last_updated":"2026-01-31T12:23:06.372647+00:00","context":{"id":"01KGA03HC42M5R85C0RMEQWYR5","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.ikea_lamp_slaapkamer_power_on_behavior","state":"on","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"ikea_lamp_slaapkamer Power-on behavior"},"last_changed":"2026-01-31T12:23:41.506437+00:00","last_reported":"2026-01-31T12:23:41.506437+00:00","last_updated":"2026-01-31T12:23:41.506437+00:00","context":{"id":"01KGA04KP234F48AY67JFZFSKD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.lamp_slaapkamer_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"lamp_slaapkamer Power-on behavior"},"last_changed":"2026-01-31T12:23:41.513431+00:00","last_reported":"2026-01-31T12:23:41.513431+00:00","last_updated":"2026-01-31T12:23:41.513431+00:00","context":{"id":"01KGA04KP9QPV07MG9XVS0A6T2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.lamp_kast_master_bedroom_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"lamp_kast_master_bedroom Power-on behavior"},"last_changed":"2026-01-31T12:23:41.512625+00:00","last_reported":"2026-01-31T12:23:41.512625+00:00","last_updated":"2026-01-31T12:23:41.512625+00:00","context":{"id":"01KGA04KP81687BV285WBGWA06","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.valetudo_rockrobo_fan","state":"unavailable","attributes":{"options":["min","low","medium","high","max"],"icon":"mdi:fan","friendly_name":"Valetudo V1 PunyCautiousParrot Fan"},"last_changed":"2026-01-31T12:23:05.580430+00:00","last_reported":"2026-01-31T12:23:06.372820+00:00","last_updated":"2026-01-31T12:23:05.628504+00:00","context":{"id":"01KGA03GMW08KQXZSEVVP5PA5N","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_kantoor_power_on_behavior","state":"on","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"switch_kantoor Power-on behavior"},"last_changed":"2026-01-31T12:23:41.519545+00:00","last_reported":"2026-01-31T12:23:41.519545+00:00","last_updated":"2026-01-31T12:23:41.519545+00:00","context":{"id":"01KGA04KPFFA3FEEQ2T5Z7DXWJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.lamp_overloop_power_on_behavior","state":"previous","attributes":{"options":["off","on","toggle","previous"],"icon":"mdi:power-settings","friendly_name":"lamp_overloop Power-on behavior"},"last_changed":"2026-01-31T12:23:41.480155+00:00","last_reported":"2026-01-31T12:23:41.480155+00:00","last_updated":"2026-01-31T12:23:41.480155+00:00","context":{"id":"01KGA04KN8JZQJ40HGY4DHYE2Q","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_trapkast_power_on_behavior","state":"previous","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"switch_trapkast Power-on behavior"},"last_changed":"2026-01-31T12:23:41.519871+00:00","last_reported":"2026-01-31T12:23:41.519871+00:00","last_updated":"2026-01-31T12:23:41.519871+00:00","context":{"id":"01KGA04KPF3TNRHTKQQAPKP5A8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.switch_trapkast_indicator_mode","state":"unknown","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"switch_trapkast Indicator mode"},"last_changed":"2026-01-31T12:23:06.299647+00:00","last_reported":"2026-01-31T12:23:06.299647+00:00","last_updated":"2026-01-31T12:23:06.299647+00:00","context":{"id":"01KGA03H9VA3V15TDZJFFRF14X","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_staande_vloerlamp_power_outage_memory","state":"restore","attributes":{"options":["on","off","restore"],"icon":"mdi:power-settings","friendly_name":"Keuken staande vloerlamp Power outage memory"},"last_changed":"2026-01-31T12:23:34.926229+00:00","last_reported":"2026-01-31T12:23:34.926229+00:00","last_updated":"2026-01-31T12:23:34.926229+00:00","context":{"id":"01KGA04D8EG65SM7E4XEXQRHRE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_staande_vloerlamp_indicator_mode","state":"off/on","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"Keuken staande vloerlamp Indicator mode"},"last_changed":"2026-01-31T12:23:34.925947+00:00","last_reported":"2026-01-31T12:23:34.925947+00:00","last_updated":"2026-01-31T12:23:34.925947+00:00","context":{"id":"01KGA04D8D3WV92Y1SMW61VHHG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_lamp_keukenblad_power_outage_memory","state":"restore","attributes":{"options":["on","off","restore"],"icon":"mdi:power-settings","friendly_name":"Keuken lamp keukenblad Power outage memory"},"last_changed":"2026-01-31T12:23:10.297484+00:00","last_reported":"2026-01-31T12:23:10.297484+00:00","last_updated":"2026-01-31T12:23:10.297484+00:00","context":{"id":"01KGA03N6SKTE5A2PMWTSMEZ45","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_lamp_keukenblad_indicator_mode","state":"off/on","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"Keuken lamp keukenblad Indicator mode"},"last_changed":"2026-01-31T12:23:10.295229+00:00","last_reported":"2026-01-31T12:23:10.295229+00:00","last_updated":"2026-01-31T12:23:10.295229+00:00","context":{"id":"01KGA03N6QJ57JREHFBJ2V6ZQZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_kerstverlichting_power_on_behavior","state":"previous","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"Keuken kerstverlichting Power-on behavior"},"last_changed":"2026-01-31T12:23:41.511703+00:00","last_reported":"2026-01-31T12:23:41.511703+00:00","last_updated":"2026-01-31T12:23:41.511703+00:00","context":{"id":"01KGA04KP73B1PAZKRCDC6MDJ6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_kerstverlichting_indicator_mode","state":"off","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"Keuken kerstverlichting Indicator mode"},"last_changed":"2026-01-31T12:23:41.511689+00:00","last_reported":"2026-01-31T12:23:41.511689+00:00","last_updated":"2026-01-31T12:23:41.511689+00:00","context":{"id":"01KGA04KP7CWMHD0KGXFQF7C14","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.woonkamer_hoek_bank_power_on_behavior","state":"previous","attributes":{"options":["off","previous","on"],"icon":"mdi:power-settings","friendly_name":"Woonkamer hoek bank Power-on behavior"},"last_changed":"2026-01-31T12:23:41.521322+00:00","last_reported":"2026-01-31T12:23:41.521322+00:00","last_updated":"2026-01-31T12:23:41.521322+00:00","context":{"id":"01KGA04KPHW67P0ADWSMZ6GPHV","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.woonkamer_hoek_bank_indicator_mode","state":"unknown","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"Woonkamer hoek bank Indicator mode"},"last_changed":"2026-01-31T12:23:06.299413+00:00","last_reported":"2026-01-31T12:23:06.299413+00:00","last_updated":"2026-01-31T12:23:06.299413+00:00","context":{"id":"01KGA03H9VYV5D4C3850YC5F56","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.valetudo_punycautiousparrot_fan","state":"medium","attributes":{"options":["min","low","medium","high","max"],"icon":"mdi:fan","friendly_name":"Valetudo V1 PunyCautiousParrot Fan"},"last_changed":"2026-01-31T12:23:06.372925+00:00","last_reported":"2026-01-31T12:23:06.372925+00:00","last_updated":"2026-01-31T12:23:06.372925+00:00","context":{"id":"01KGA03HC4QWP85H5GFTJMZSM9","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_lamp_deurbel_power_outage_memory","state":"off","attributes":{"options":["on","off","restore"],"icon":"mdi:power-settings","friendly_name":"Keuken_lamp_deurbel Power outage memory"},"last_changed":"2026-01-31T12:23:09.723319+00:00","last_reported":"2026-01-31T12:23:09.723319+00:00","last_updated":"2026-01-31T12:23:09.723319+00:00","context":{"id":"01KGA03MMVYVQEP8RQPEN1R32M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"select.keuken_lamp_deurbel_indicator_mode","state":"off/on","attributes":{"options":["off","off/on","on/off","on"],"friendly_name":"Keuken_lamp_deurbel Indicator mode"},"last_changed":"2026-01-31T12:23:09.723832+00:00","last_reported":"2026-01-31T12:23:09.723832+00:00","last_updated":"2026-01-31T12:23:09.723832+00:00","context":{"id":"01KGA03MMVK8XM3W5WFK6QTDMR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.water_sensor01_battery","state":"83","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"water_sensor01 Battery"},"last_changed":"2026-01-31T12:23:41.456933+00:00","last_reported":"2026-01-31T12:23:41.456933+00:00","last_updated":"2026-01-31T12:23:41.456933+00:00","context":{"id":"01KGA04KMGKV75KSB0HPT1AHBK","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "83",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor02_voltage","state":"3035","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"motion_sensor02 Voltage"},"last_changed":"2026-01-31T12:23:41.477821+00:00","last_reported":"2026-01-31T12:23:41.477821+00:00","last_updated":"2026-01-31T12:23:41.477821+00:00","context":{"id":"01KGA04KN51Q2A3KXXS6GMKN9B","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3035",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor02_illuminance","state":"3","attributes":{"state_class":"measurement","unit_of_measurement":"lx","device_class":"illuminance","friendly_name":"motion_sensor02 Illuminance"},"last_changed":"2026-01-31T12:23:41.477706+00:00","last_reported":"2026-01-31T12:23:41.477706+00:00","last_updated":"2026-01-31T12:23:41.477706+00:00","context":{"id":"01KGA04KN52NN4PFFF3BH47XY1","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.water_sensor01_voltage","state":"2975","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"water_sensor01 Voltage"},"last_changed":"2026-01-31T12:23:41.458358+00:00","last_reported":"2026-01-31T12:23:41.458358+00:00","last_updated":"2026-01-31T12:23:41.458358+00:00","context":{"id":"01KGA04KMJSH2AZ12XGCT3DSDC","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2975",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.water_sensor01_device_temperature","state":"23","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"water_sensor01 Temperature"},"last_changed":"2026-01-31T12:23:41.457564+00:00","last_reported":"2026-01-31T12:23:41.457564+00:00","last_updated":"2026-01-31T12:23:41.457564+00:00","context":{"id":"01KGA04KMH1V8M0CJ53Z11B752","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "23",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor02_device_temperature","state":"18","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"motion_sensor02 Temperature"},"last_changed":"2026-01-31T12:23:41.477754+00:00","last_reported":"2026-01-31T12:23:41.477754+00:00","last_updated":"2026-01-31T12:23:41.477754+00:00","context":{"id":"01KGA04KN5350AXAENVNBA2254","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "18",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor03_battery","state":"83","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"motion_sensor03 Battery"},"last_changed":"2026-01-31T12:23:41.478760+00:00","last_reported":"2026-01-31T12:23:41.478760+00:00","last_updated":"2026-01-31T12:23:41.478760+00:00","context":{"id":"01KGA04KN6ZABTHQ0K4PJ6D6GY","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "83",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.trapkast_deur_battery","state":"100","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"trapkast_deur Battery"},"last_changed":"2026-01-31T12:23:41.463712+00:00","last_reported":"2026-01-31T12:23:41.463712+00:00","last_updated":"2026-01-31T12:23:41.463712+00:00","context":{"id":"01KGA04KMQHVM0EK2RV9EXWPEQ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor03_voltage","state":"2975","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"motion_sensor03 Voltage"},"last_changed":"2026-01-31T12:23:41.478828+00:00","last_reported":"2026-01-31T12:23:41.478828+00:00","last_updated":"2026-01-31T12:23:41.478828+00:00","context":{"id":"01KGA04KN6FGZT7X0XCD0AZ2NG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2975",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.trapkast_deur_voltage","state":"3005","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"trapkast_deur Voltage"},"last_changed":"2026-01-31T12:23:41.463905+00:00","last_reported":"2026-01-31T12:23:41.463905+00:00","last_updated":"2026-01-31T12:23:41.463905+00:00","context":{"id":"01KGA04KMQ1HZPPAZ7F1BNB5ZG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3005",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor03_illuminance","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"lx","device_class":"illuminance","friendly_name":"motion_sensor03 Illuminance"},"last_changed":"2026-01-31T12:23:41.478699+00:00","last_reported":"2026-01-31T12:23:41.478699+00:00","last_updated":"2026-01-31T12:23:41.478699+00:00","context":{"id":"01KGA04KN61JWP1ZWDFCD970Z2","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.trapkast_deur_device_temperature","state":"24","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"trapkast_deur Temperature"},"last_changed":"2026-01-31T12:23:41.464228+00:00","last_reported":"2026-01-31T12:23:41.464228+00:00","last_updated":"2026-01-31T12:23:41.464228+00:00","context":{"id":"01KGA04KMRTQTBPBP9HWYVXC3Y","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "24",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor03_device_temperature","state":"30","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"motion_sensor03 Temperature"},"last_changed":"2026-01-31T12:23:41.478855+00:00","last_reported":"2026-01-31T12:23:41.478855+00:00","last_updated":"2026-01-31T12:23:41.478855+00:00","context":{"id":"01KGA04KN630N6HKBDEWMH6NW0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "30",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.ikea_remote01_battery","state":"60","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"ikea_remote01 Battery"},"last_changed":"2026-01-31T12:23:41.479150+00:00","last_reported":"2026-01-31T12:23:41.479150+00:00","last_updated":"2026-01-31T12:23:41.479150+00:00","context":{"id":"01KGA04KN7F1CPC33A7Z8ZAGHJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "60",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch01_power","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"shp13_switch01 Power"},"last_changed":"2026-01-31T12:23:41.466270+00:00","last_reported":"2026-01-31T12:23:41.466270+00:00","last_updated":"2026-01-31T12:23:41.466270+00:00","context":{"id":"01KGA04KMTRQ9S3TXTXYGHVNT0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch01_current","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"A","device_class":"current","friendly_name":"shp13_switch01 Current"},"last_changed":"2026-01-31T12:23:41.466316+00:00","last_reported":"2026-01-31T12:23:41.466316+00:00","last_updated":"2026-01-31T12:23:41.466316+00:00","context":{"id":"01KGA04KMTNWJ0DJCV67J9235G","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "A"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_map_segments","state":"unavailable","attributes":{"icon":"mdi:vector-selection","friendly_name":"Valetudo V1 PunyCautiousParrot Map segments"},"last_changed":"2026-01-31T12:23:05.621172+00:00","last_reported":"2026-01-31T12:23:06.374882+00:00","last_updated":"2026-01-31T12:23:05.628520+00:00","context":{"id":"01KGA03GMW7EC7JEJY3GA2DZCX","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch01_voltage","state":"235","attributes":{"state_class":"measurement","unit_of_measurement":"V","device_class":"voltage","friendly_name":"shp13_switch01 Voltage"},"last_changed":"2026-01-31T12:23:41.466182+00:00","last_reported":"2026-01-31T12:23:41.466182+00:00","last_updated":"2026-01-31T12:23:41.466182+00:00","context":{"id":"01KGA04KMT6XG1WY258RY5QDPB","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "235",
+        "native_unit_of_measurement": "V"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_main_brush","state":"unavailable","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Main Brush"},"last_changed":"2026-01-31T12:23:05.622245+00:00","last_reported":"2026-01-31T12:23:06.374951+00:00","last_updated":"2026-01-31T12:23:05.628535+00:00","context":{"id":"01KGA03GMWD8CVMGRXJ5C4G7PB","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3250",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch01_energy","state":"509.38","attributes":{"state_class":"total_increasing","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"shp13_switch01 Energy"},"last_changed":"2026-01-31T12:23:41.465918+00:00","last_reported":"2026-01-31T12:23:41.465918+00:00","last_updated":"2026-01-31T12:23:41.465918+00:00","context":{"id":"01KGA04KMSRYSR9NFEBF9CBN2K","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "509.38",
+        "native_unit_of_measurement": "kWh"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_right_brush","state":"unavailable","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Right Brush"},"last_changed":"2026-01-31T12:23:05.623376+00:00","last_reported":"2026-01-31T12:23:06.375016+00:00","last_updated":"2026-01-31T12:23:05.628549+00:00","context":{"id":"01KGA03GMWD36G7T0GFTP940RH","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_main_filter","state":"unavailable","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Main Filter"},"last_changed":"2026-01-31T12:23:05.624237+00:00","last_reported":"2026-01-31T12:23:06.375078+00:00","last_updated":"2026-01-31T12:23:05.628558+00:00","context":{"id":"01KGA03GMWG6GMM2T2VGRHNBJW","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3463",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch02_power","state":"3","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"shp13_switch02 Power"},"last_changed":"2026-01-31T12:24:34.196467+00:00","last_reported":"2026-01-31T12:24:34.196467+00:00","last_updated":"2026-01-31T12:24:34.196467+00:00","context":{"id":"01KGA0674MJ3YNGFNZPMZNNVVN","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3",
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_sensor_cleaning","state":"unavailable","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Sensor cleaning"},"last_changed":"2026-01-31T12:23:05.625025+00:00","last_reported":"2026-01-31T12:23:06.375144+00:00","last_updated":"2026-01-31T12:23:05.628567+00:00","context":{"id":"01KGA03GMWQJPFYW9J2FEV69EA","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch02_current","state":"0.11","attributes":{"state_class":"measurement","unit_of_measurement":"A","device_class":"current","friendly_name":"shp13_switch02 Current"},"last_changed":"2026-01-31T12:24:34.196932+00:00","last_reported":"2026-01-31T12:24:34.196932+00:00","last_updated":"2026-01-31T12:24:34.196932+00:00","context":{"id":"01KGA0674MGMD4K2E56F9TFFX0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0.11",
+        "native_unit_of_measurement": "A"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_current_statistics_time","state":"unavailable","attributes":{"unit_of_measurement":"seconds","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Current Statistics Time"},"last_changed":"2026-01-31T12:23:05.625791+00:00","last_reported":"2026-01-31T12:23:06.375433+00:00","last_updated":"2026-01-31T12:23:05.628577+00:00","context":{"id":"01KGA03GMWCJGSV3GAYSFE4JQ7","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1955",
+        "native_unit_of_measurement": "seconds"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch02_voltage","state":"234","attributes":{"state_class":"measurement","unit_of_measurement":"V","device_class":"voltage","friendly_name":"shp13_switch02 Voltage"},"last_changed":"2026-01-31T12:24:34.195879+00:00","last_reported":"2026-01-31T12:24:34.195879+00:00","last_updated":"2026-01-31T12:24:34.195879+00:00","context":{"id":"01KGA0674K6Y6PE3MS69ABQP4J","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "234",
+        "native_unit_of_measurement": "V"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_current_statistics_area","state":"unavailable","attributes":{"unit_of_measurement":"cm²","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Current Statistics Area"},"last_changed":"2026-01-31T12:23:05.626529+00:00","last_reported":"2026-01-31T12:23:06.375491+00:00","last_updated":"2026-01-31T12:23:05.628586+00:00","context":{"id":"01KGA03GMWNKZJDBRYZ9RJJRR0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "239000",
+        "native_unit_of_measurement": "cm²"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.shp13_switch02_energy","state":"658.31","attributes":{"state_class":"total_increasing","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"shp13_switch02 Energy"},"last_changed":"2026-01-31T12:23:34.103334+00:00","last_reported":"2026-01-31T12:23:34.103334+00:00","last_updated":"2026-01-31T12:23:34.103334+00:00","context":{"id":"01KGA04CEQY1QKB7TP3STM14JG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "658.31",
+        "native_unit_of_measurement": "kWh"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_wi_fi_configuration","state":"unavailable","attributes":{"unit_of_measurement":"dBm","device_class":"signal_strength","icon":"mdi:wifi","friendly_name":"Valetudo V1 PunyCautiousParrot Wi-Fi configuration"},"last_changed":"2026-01-31T12:23:05.628762+00:00","last_reported":"2026-01-31T12:23:06.375614+00:00","last_updated":"2026-01-31T12:23:05.628762+00:00","context":{"id":"01KGA03GMW7K14SQDZFYVJQMV6","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "-58",
+        "native_unit_of_measurement": "dBm"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_error","state":"unavailable","attributes":{"icon":"mdi:alert","friendly_name":"Valetudo V1 PunyCautiousParrot Error"},"last_changed":"2026-01-31T12:23:05.629660+00:00","last_reported":"2026-01-31T12:23:06.375744+00:00","last_updated":"2026-01-31T12:23:05.629660+00:00","context":{"id":"01KGA03GMXV348C8539WD3JDST","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "No error",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatuur_keuken_battery","state":"63","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"Temperatuur keuken Battery"},"last_changed":"2026-01-31T12:23:41.472584+00:00","last_reported":"2026-01-31T12:23:41.472584+00:00","last_updated":"2026-01-31T12:23:41.472584+00:00","context":{"id":"01KGA04KN0KSTKR5KTAPJ02WJV","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "63",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_status_flag","state":"unavailable","attributes":{"icon":"mdi:flag","friendly_name":"Valetudo V1 PunyCautiousParrot Status Flag"},"last_changed":"2026-01-31T12:23:05.631068+00:00","last_reported":"2026-01-31T12:23:06.375811+00:00","last_updated":"2026-01-31T12:23:05.631068+00:00","context":{"id":"01KGA03GMZQBZSZPC2QE4JTGJS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatuur_keuken_temperature","state":"16.62","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"Temperatuur keuken Temperature"},"last_changed":"2026-01-31T12:23:41.472919+00:00","last_reported":"2026-01-31T12:23:41.472919+00:00","last_updated":"2026-01-31T12:23:41.472919+00:00","context":{"id":"01KGA04KN0JN110R6ADGAAZ2V4","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "16.62",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_battery_level","state":"unavailable","attributes":{"unit_of_measurement":"%","device_class":"battery","icon":"mdi:battery","friendly_name":"Valetudo V1 PunyCautiousParrot Battery level"},"last_changed":"2026-01-31T12:23:05.633567+00:00","last_reported":"2026-01-31T12:23:06.376113+00:00","last_updated":"2026-01-31T12:23:05.633567+00:00","context":{"id":"01KGA03GN1JE5WP1KR3SC8TKJ4","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatuur_keuken_humidity","state":"73.37","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"Temperatuur keuken Humidity"},"last_changed":"2026-01-31T12:23:41.472876+00:00","last_reported":"2026-01-31T12:23:41.472876+00:00","last_updated":"2026-01-31T12:23:41.472876+00:00","context":{"id":"01KGA04KN0PT3PYKSRRBNZ2NCV","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "73.37",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_rockrobo_events","state":"unavailable","attributes":{"icon":"mdi:bell","friendly_name":"Valetudo V1 PunyCautiousParrot Events"},"last_changed":"2026-01-31T12:23:05.634721+00:00","last_reported":"2026-01-31T12:23:06.376256+00:00","last_updated":"2026-01-31T12:23:05.634721+00:00","context":{"id":"01KGA03GN267QY05AGNDSH02FK","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatuur_keuken_pressure","state":"1022","attributes":{"state_class":"measurement","unit_of_measurement":"hPa","device_class":"atmospheric_pressure","friendly_name":"Temperatuur keuken Atmospheric pressure"},"last_changed":"2026-01-31T12:23:41.472758+00:00","last_reported":"2026-01-31T12:23:41.472758+00:00","last_updated":"2026-01-31T12:23:41.472758+00:00","context":{"id":"01KGA04KN0SQ8QBJHBH8AXXMW2","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1022",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_sensor04_battery","state":"37","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"temperature_sensor04 Battery"},"last_changed":"2026-01-31T12:23:41.484097+00:00","last_reported":"2026-01-31T12:23:41.484097+00:00","last_updated":"2026-01-31T12:23:41.484097+00:00","context":{"id":"01KGA04KNCEH8Q5TCBW7S2KBTR","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "37",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperatuur_keuken_voltage","state":"2945","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"Temperatuur keuken Voltage"},"last_changed":"2026-01-31T12:23:41.472831+00:00","last_reported":"2026-01-31T12:23:41.472831+00:00","last_updated":"2026-01-31T12:23:41.472831+00:00","context":{"id":"01KGA04KN007BS38J2JV72QY82","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2945",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_sensor04_temperature","state":"11.58","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"temperature_sensor04 Temperature"},"last_changed":"2026-01-31T12:23:41.484118+00:00","last_reported":"2026-01-31T12:23:41.484118+00:00","last_updated":"2026-01-31T12:23:41.484118+00:00","context":{"id":"01KGA04KNCYQVEZ0HS9DD3FQXD","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "11.58",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_sensor04_humidity","state":"75.89","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"temperature_sensor04 Humidity"},"last_changed":"2026-01-31T12:23:41.483993+00:00","last_reported":"2026-01-31T12:23:41.483993+00:00","last_updated":"2026-01-31T12:23:41.483993+00:00","context":{"id":"01KGA04KNBTA6NKFRDXXKGC191","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "75.89",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_badkamer_beneden_battery","state":"37","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"temperature_badkamer_beneden Battery"},"last_changed":"2026-01-31T12:23:41.474552+00:00","last_reported":"2026-01-31T12:23:41.474552+00:00","last_updated":"2026-01-31T12:23:41.474552+00:00","context":{"id":"01KGA04KN2CSHDV68KJ0WXFFSH","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "37",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_sensor04_pressure","state":"1004.6","attributes":{"state_class":"measurement","unit_of_measurement":"hPa","device_class":"atmospheric_pressure","friendly_name":"temperature_sensor04 Atmospheric pressure"},"last_changed":"2026-01-31T12:23:41.484133+00:00","last_reported":"2026-01-31T12:23:41.484133+00:00","last_updated":"2026-01-31T12:23:41.484133+00:00","context":{"id":"01KGA04KNCFKYH0GY1FN6XJ7HK","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1004.6",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_badkamer_beneden_temperature","state":"14.12","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"temperature_badkamer_beneden Temperature"},"last_changed":"2026-01-31T12:23:41.474668+00:00","last_reported":"2026-01-31T12:23:41.474668+00:00","last_updated":"2026-01-31T12:23:41.474668+00:00","context":{"id":"01KGA04KN27DPS3N7Q3G8101EC","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "14.12",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_sensor04_voltage","state":"2905","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"temperature_sensor04 Voltage"},"last_changed":"2026-01-31T12:23:41.484071+00:00","last_reported":"2026-01-31T12:23:41.484071+00:00","last_updated":"2026-01-31T12:23:41.484071+00:00","context":{"id":"01KGA04KNCWG7YYBRJAT89JX5V","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2905",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_badkamer_beneden_humidity","state":"67.17","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"temperature_badkamer_beneden Humidity"},"last_changed":"2026-01-31T12:23:41.474446+00:00","last_reported":"2026-01-31T12:23:41.474446+00:00","last_updated":"2026-01-31T12:23:41.474446+00:00","context":{"id":"01KGA04KN2FN2PKPGR59E6E48G","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "67.17",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_badkamer_beneden_pressure","state":"1014.9","attributes":{"state_class":"measurement","unit_of_measurement":"hPa","device_class":"atmospheric_pressure","friendly_name":"temperature_badkamer_beneden Atmospheric pressure"},"last_changed":"2026-01-31T12:23:41.474599+00:00","last_reported":"2026-01-31T12:23:41.474599+00:00","last_updated":"2026-01-31T12:23:41.474599+00:00","context":{"id":"01KGA04KN2JEWF7ZFRE4V669XP","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1014.9",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_master_bedroom_battery","state":"43","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"temperature_master_bedroom Battery"},"last_changed":"2026-01-31T12:23:41.485006+00:00","last_reported":"2026-01-31T12:23:41.485006+00:00","last_updated":"2026-01-31T12:23:41.485006+00:00","context":{"id":"01KGA04KNDQ0A6KP9BQBSP42A7","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "43",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_badkamer_beneden_voltage","state":"2905","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"temperature_badkamer_beneden Voltage"},"last_changed":"2026-01-31T12:23:41.474712+00:00","last_reported":"2026-01-31T12:23:41.474712+00:00","last_updated":"2026-01-31T12:23:41.474712+00:00","context":{"id":"01KGA04KN268E4M6Q0AQM9F1YZ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2905",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_master_bedroom_temperature","state":"13.11","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"temperature_master_bedroom Temperature"},"last_changed":"2026-01-31T12:23:41.484882+00:00","last_reported":"2026-01-31T12:23:41.484882+00:00","last_updated":"2026-01-31T12:23:41.484882+00:00","context":{"id":"01KGA04KNC9QJSG40BMZXSMQBC","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "13.11",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_master_bedroom_humidity","state":"81.08","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"temperature_master_bedroom Humidity"},"last_changed":"2026-01-31T12:23:41.485068+00:00","last_reported":"2026-01-31T12:23:41.485068+00:00","last_updated":"2026-01-31T12:23:41.485068+00:00","context":{"id":"01KGA04KND425E1KSR3KDH7PMY","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "81.08",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_master_bedroom_pressure","state":"1000.3","attributes":{"state_class":"measurement","unit_of_measurement":"hPa","device_class":"atmospheric_pressure","friendly_name":"temperature_master_bedroom Atmospheric pressure"},"last_changed":"2026-01-31T12:23:41.485105+00:00","last_reported":"2026-01-31T12:23:41.485105+00:00","last_updated":"2026-01-31T12:23:41.485105+00:00","context":{"id":"01KGA04KNDWFYTKAP42Z4XB67M","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1000.3",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor01_battery","state":"100","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"motion_sensor01 Battery"},"last_changed":"2026-01-31T12:23:41.468966+00:00","last_reported":"2026-01-31T12:23:41.468966+00:00","last_updated":"2026-01-31T12:23:41.468966+00:00","context":{"id":"01KGA04KMWP3CCZD8GXT2TWAH2","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_master_bedroom_voltage","state":"2915","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"temperature_master_bedroom Voltage"},"last_changed":"2026-01-31T12:23:41.485089+00:00","last_reported":"2026-01-31T12:23:41.485089+00:00","last_updated":"2026-01-31T12:23:41.485089+00:00","context":{"id":"01KGA04KNDW4576G5WSFRYNM7M","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2915",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor01_voltage","state":"3035","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"motion_sensor01 Voltage"},"last_changed":"2026-01-31T12:23:41.469164+00:00","last_reported":"2026-01-31T12:23:41.469164+00:00","last_updated":"2026-01-31T12:23:41.469164+00:00","context":{"id":"01KGA04KMXKTPQTX5NCE6YTXK1","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3035",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor01_illuminance","state":"847","attributes":{"state_class":"measurement","unit_of_measurement":"lx","device_class":"illuminance","friendly_name":"motion_sensor01 Illuminance"},"last_changed":"2026-01-31T12:23:41.469292+00:00","last_reported":"2026-01-31T12:23:41.469292+00:00","last_updated":"2026-01-31T12:23:41.469292+00:00","context":{"id":"01KGA04KMXXVRW5A54TE2CDDMD","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "847",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_buitendeur_battery","state":"83","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"badkamer_beneden_buitendeur Battery"},"last_changed":"2026-01-31T12:23:41.486004+00:00","last_reported":"2026-01-31T12:23:41.486004+00:00","last_updated":"2026-01-31T12:23:41.486004+00:00","context":{"id":"01KGA04KNEBBJT7R4ZJWPTZ2YD","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "83",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_buitendeur_device_temperature","state":"24","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"badkamer_beneden_buitendeur Temperature"},"last_changed":"2026-01-31T12:23:41.486043+00:00","last_reported":"2026-01-31T12:23:41.486043+00:00","last_updated":"2026-01-31T12:23:41.486043+00:00","context":{"id":"01KGA04KNE3225R7APZQRYX40E","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "24",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor01_device_temperature","state":"28","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"motion_sensor01 Temperature"},"last_changed":"2026-01-31T12:23:41.469106+00:00","last_reported":"2026-01-31T12:23:41.469106+00:00","last_updated":"2026-01-31T12:23:41.469106+00:00","context":{"id":"01KGA04KMX179D8TY4GVD0X6C0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "28",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_buitendeur_voltage","state":"2975","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"badkamer_beneden_buitendeur Voltage"},"last_changed":"2026-01-31T12:23:41.488337+00:00","last_reported":"2026-01-31T12:23:41.488337+00:00","last_updated":"2026-01-31T12:23:41.488337+00:00","context":{"id":"01KGA04KNG9MRVH5DJB8TYH19P","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2975",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.motion_sensor02_battery","state":"100","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"motion_sensor02 Battery"},"last_changed":"2026-01-31T12:23:41.477648+00:00","last_reported":"2026-01-31T12:23:41.477648+00:00","last_updated":"2026-01-31T12:23:41.477648+00:00","context":{"id":"01KGA04KN5YTTY1QXR2QR30P5X","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_raam_battery","state":"83","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"badkamer_beneden_raam Battery"},"last_changed":"2026-01-31T12:23:41.490376+00:00","last_reported":"2026-01-31T12:23:41.490376+00:00","last_updated":"2026-01-31T12:23:41.490376+00:00","context":{"id":"01KGA04KNJSB16DYHV90AB3QD5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "83",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_raam_device_temperature","state":"16","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"badkamer_beneden_raam Temperature"},"last_changed":"2026-01-31T12:23:41.490322+00:00","last_reported":"2026-01-31T12:23:41.490322+00:00","last_updated":"2026-01-31T12:23:41.490322+00:00","context":{"id":"01KGA04KNJR6ZPMHZE30PRW904","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "16",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.badkamer_beneden_raam_voltage","state":"2975","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"badkamer_beneden_raam Voltage"},"last_changed":"2026-01-31T12:23:41.490430+00:00","last_reported":"2026-01-31T12:23:41.490430+00:00","last_updated":"2026-01-31T12:23:41.490430+00:00","context":{"id":"01KGA04KNJXJYGTGH3E8SV6VHC","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2975",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_voordeur_battery","state":"100","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"keuken_voordeur Battery"},"last_changed":"2026-01-31T12:23:41.490803+00:00","last_reported":"2026-01-31T12:23:41.490803+00:00","last_updated":"2026-01-31T12:23:41.490803+00:00","context":{"id":"01KGA04KNJMH1YYEF6F61X08GZ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_voordeur_device_temperature","state":"25","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"keuken_voordeur Temperature"},"last_changed":"2026-01-31T12:23:41.490709+00:00","last_reported":"2026-01-31T12:23:41.490709+00:00","last_updated":"2026-01-31T12:23:41.490709+00:00","context":{"id":"01KGA04KNJJ6TMYDRVYYE188MX","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "25",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_voordeur_voltage","state":"3005","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"keuken_voordeur Voltage"},"last_changed":"2026-01-31T12:23:41.490733+00:00","last_reported":"2026-01-31T12:23:41.490733+00:00","last_updated":"2026-01-31T12:23:41.490733+00:00","context":{"id":"01KGA04KNJEZMY7YTKF6K53ADR","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3005",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_tuindeur_links_battery","state":"83","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"uitbouw_tuindeur_links Battery"},"last_changed":"2026-01-31T12:23:41.491452+00:00","last_reported":"2026-01-31T12:23:41.491452+00:00","last_updated":"2026-01-31T12:23:41.491452+00:00","context":{"id":"01KGA04KNKAR11F15D279YFR4E","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "83",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_tuindeur_links_device_temperature","state":"22","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"uitbouw_tuindeur_links Temperature"},"last_changed":"2026-01-31T12:23:41.491516+00:00","last_reported":"2026-01-31T12:23:41.491516+00:00","last_updated":"2026-01-31T12:23:41.491516+00:00","context":{"id":"01KGA04KNK2SKM11RKN1ZT8SN5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "22",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_tuindeur_links_voltage","state":"2975","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"uitbouw_tuindeur_links Voltage"},"last_changed":"2026-01-31T12:23:41.491485+00:00","last_reported":"2026-01-31T12:23:41.491485+00:00","last_updated":"2026-01-31T12:23:41.491485+00:00","context":{"id":"01KGA04KNKHQF2N5VVP7JHPJ3P","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2975",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_links_battery","state":"90","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"woonkamer_tuindeur_links Battery"},"last_changed":"2026-01-31T12:23:41.491729+00:00","last_reported":"2026-01-31T12:23:41.491729+00:00","last_updated":"2026-01-31T12:23:41.491729+00:00","context":{"id":"01KGA04KNKTGJ7C1YW2AHE56P0","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "90",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_links_device_temperature","state":"23","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"woonkamer_tuindeur_links Temperature"},"last_changed":"2026-01-31T12:23:41.491776+00:00","last_reported":"2026-01-31T12:23:41.491776+00:00","last_updated":"2026-01-31T12:23:41.491776+00:00","context":{"id":"01KGA04KNKH063BJW3YX50YWJS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "23",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_links_voltage","state":"2985","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"woonkamer_tuindeur_links Voltage"},"last_changed":"2026-01-31T12:23:41.491749+00:00","last_reported":"2026-01-31T12:23:41.491749+00:00","last_updated":"2026-01-31T12:23:41.491749+00:00","context":{"id":"01KGA04KNK5921HH94RMGCRTEG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2985",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_rechts_battery","state":"90","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"woonkamer_tuindeur_rechts Battery"},"last_changed":"2026-01-31T12:23:41.492080+00:00","last_reported":"2026-01-31T12:23:41.492080+00:00","last_updated":"2026-01-31T12:23:41.492080+00:00","context":{"id":"01KGA04KNMZ7E3ZS82GZTFXE8P","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "90",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_rechts_device_temperature","state":"23","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"woonkamer_tuindeur_rechts Temperature"},"last_changed":"2026-01-31T12:23:41.492098+00:00","last_reported":"2026-01-31T12:23:41.492098+00:00","last_updated":"2026-01-31T12:23:41.492098+00:00","context":{"id":"01KGA04KNM1G1DS9KVQDCM7DFN","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "23",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.woonkamer_tuindeur_rechts_voltage","state":"2985","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"woonkamer_tuindeur_rechts Voltage"},"last_changed":"2026-01-31T12:23:41.492032+00:00","last_reported":"2026-01-31T12:23:41.492032+00:00","last_updated":"2026-01-31T12:23:41.492032+00:00","context":{"id":"01KGA04KNMGB99FXF4P053FCXD","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2985",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_steegdeur_battery","state":"97","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"uitbouw_steegdeur Battery"},"last_changed":"2026-01-31T12:23:41.492302+00:00","last_reported":"2026-01-31T12:23:41.492302+00:00","last_updated":"2026-01-31T12:23:41.492302+00:00","context":{"id":"01KGA04KNMC8YK6RJPMAXFQ2VT","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "97",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_steegdeur_device_temperature","state":"17","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"uitbouw_steegdeur Temperature"},"last_changed":"2026-01-31T12:23:41.492355+00:00","last_reported":"2026-01-31T12:23:41.492355+00:00","last_updated":"2026-01-31T12:23:41.492355+00:00","context":{"id":"01KGA04KNMAM3R7HM25T5MNNGS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "17",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.uitbouw_steegdeur_voltage","state":"2995","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"uitbouw_steegdeur Voltage"},"last_changed":"2026-01-31T12:23:41.492375+00:00","last_reported":"2026-01-31T12:23:41.492375+00:00","last_updated":"2026-01-31T12:23:41.492375+00:00","context":{"id":"01KGA04KNMRG3X4Q4G051H2M6H","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2995",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.bed_schakelaar_marielle_battery","state":"87","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"bed_schakelaar_marielle Battery"},"last_changed":"2026-01-31T12:23:41.508199+00:00","last_reported":"2026-01-31T12:23:41.508199+00:00","last_updated":"2026-01-31T12:23:41.508199+00:00","context":{"id":"01KGA04KP4Q4W4YYSNSHN0HDMM","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "87",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.beweging_woonkamer_uitbouw_battery","state":"100","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"beweging_woonkamer_uitbouw Battery"},"last_changed":"2026-01-31T12:23:41.510615+00:00","last_reported":"2026-01-31T12:23:41.510615+00:00","last_updated":"2026-01-31T12:23:41.510615+00:00","context":{"id":"01KGA04KP66R2BHTSB459TVZQZ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.beweging_woonkamer_uitbouw_device_temperature","state":"19","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"beweging_woonkamer_uitbouw Temperature"},"last_changed":"2026-01-31T12:23:41.510749+00:00","last_reported":"2026-01-31T12:23:41.510749+00:00","last_updated":"2026-01-31T12:23:41.510749+00:00","context":{"id":"01KGA04KP64SXM1BS68BZ6RK3W","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "19",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.beweging_woonkamer_uitbouw_voltage","state":"3045","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"beweging_woonkamer_uitbouw Voltage"},"last_changed":"2026-01-31T12:23:41.510630+00:00","last_reported":"2026-01-31T12:23:41.510630+00:00","last_updated":"2026-01-31T12:23:41.510630+00:00","context":{"id":"01KGA04KP6A1KGZ7HVCP375CGQ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3045",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.beweging_woonkamer_uitbouw_illuminance","state":"84","attributes":{"state_class":"measurement","unit_of_measurement":"lx","device_class":"illuminance","friendly_name":"beweging_woonkamer_uitbouw Illuminance"},"last_changed":"2026-01-31T12:23:41.510593+00:00","last_reported":"2026-01-31T12:23:41.510593+00:00","last_updated":"2026-01-31T12:23:41.510593+00:00","context":{"id":"01KGA04KP6905ZS7Q22K1P6V85","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "84",
+        "native_unit_of_measurement": "lx"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_map_segments","state":"3","attributes":{"1":"1","2":"2","3":"3","icon":"mdi:vector-selection","friendly_name":"Dreame L10 Pro Map segments"},"last_changed":"2026-01-31T12:23:06.376436+00:00","last_reported":"2026-01-31T12:23:06.376436+00:00","last_updated":"2026-01-31T12:23:06.376436+00:00","context":{"id":"01KGA03HC835HVQWB7WN1B4MPE","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "3",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_wi_fi_configuration","state":"-64","attributes":{"ssid":"Dijk_I","ips":["192.168.30.41","fe80::2618:c6ff:fe14:c421"],"frequency":"2.4ghz","signal":-64,"unit_of_measurement":"dBm","device_class":"signal_strength","icon":"mdi:wifi","friendly_name":"Dreame L10 Pro Wi-Fi configuration"},"last_changed":"2026-01-31T12:25:05.945304+00:00","last_reported":"2026-01-31T12:25:05.945304+00:00","last_updated":"2026-01-31T12:25:05.945304+00:00","context":{"id":"01KGA0764SQJ8TAASQVFH0CC2Z","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "-64",
+        "native_unit_of_measurement": "dBm"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_current_statistics_time","state":"0","attributes":{"unit_of_measurement":"seconds","icon":"mdi:equalizer","friendly_name":"Dreame L10 Pro Current Statistics Time"},"last_changed":"2026-01-31T12:23:06.377561+00:00","last_reported":"2026-01-31T12:23:06.377561+00:00","last_updated":"2026-01-31T12:23:06.377561+00:00","context":{"id":"01KGA03HC9DXGPHCPXCQEVXT49","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "seconds"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_current_statistics_area","state":"0","attributes":{"unit_of_measurement":"cm²","icon":"mdi:equalizer","friendly_name":"Dreame L10 Pro Current Statistics Area"},"last_changed":"2026-01-31T12:23:06.378051+00:00","last_reported":"2026-01-31T12:23:06.378051+00:00","last_updated":"2026-01-31T12:23:06.378051+00:00","context":{"id":"01KGA03HCA92WD93GJX8ZQCHCQ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "cm²"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_main_brush","state":"14340","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Dreame L10 Pro Main Brush"},"last_changed":"2026-01-31T12:23:06.378148+00:00","last_reported":"2026-01-31T12:23:06.378148+00:00","last_updated":"2026-01-31T12:23:06.378148+00:00","context":{"id":"01KGA03HCAY47ZY6MV4M0XEJY2","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "14340",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_right_brush","state":"8340","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Dreame L10 Pro Right Brush"},"last_changed":"2026-01-31T12:23:06.378443+00:00","last_reported":"2026-01-31T12:23:06.378443+00:00","last_updated":"2026-01-31T12:23:06.378443+00:00","context":{"id":"01KGA03HCAMH7JHDGMMDAKBTCH","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "8340",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_main_filter","state":"5340","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Dreame L10 Pro Main Filter"},"last_changed":"2026-01-31T12:23:06.378540+00:00","last_reported":"2026-01-31T12:23:06.378540+00:00","last_updated":"2026-01-31T12:23:06.378540+00:00","context":{"id":"01KGA03HCATFZS93ZHGHQGG1VJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "5340",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_sensor_cleaning","state":"0","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Dreame L10 Pro Sensor cleaning"},"last_changed":"2026-01-31T12:23:06.378821+00:00","last_reported":"2026-01-31T12:23:06.378821+00:00","last_updated":"2026-01-31T12:23:06.378821+00:00","context":{"id":"01KGA03HCANFFE1908QDG8CD4M","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_error","state":"No error","attributes":{"severity":{"kind":"none","level":"none"},"subsystem":"none","message":"","icon":"mdi:alert","friendly_name":"Dreame L10 Pro Error"},"last_changed":"2026-01-31T12:23:06.379661+00:00","last_reported":"2026-01-31T12:23:06.379661+00:00","last_updated":"2026-01-31T12:23:06.379661+00:00","context":{"id":"01KGA03HCB2SMTWER41B097075","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "No error",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_battery_level","state":"100","attributes":{"unit_of_measurement":"%","device_class":"battery","icon":"mdi:battery","friendly_name":"Dreame L10 Pro Battery level"},"last_changed":"2026-01-31T12:23:06.379878+00:00","last_reported":"2026-01-31T12:23:06.379878+00:00","last_updated":"2026-01-31T12:23:06.379878+00:00","context":{"id":"01KGA03HCBW3N895DRJNSTHN17","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "100",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_status_flag","state":"none","attributes":{"icon":"mdi:flag","friendly_name":"Dreame L10 Pro Status Flag"},"last_changed":"2026-01-31T12:23:06.380123+00:00","last_reported":"2026-01-31T12:23:06.380123+00:00","last_updated":"2026-01-31T12:23:06.380123+00:00","context":{"id":"01KGA03HCCTRCM1NYNT7PZ36PB","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_events","state":"1","attributes":{"consumable_depleted_cleaning_sensor":{"__class":"ConsumableDepletedValetudoEvent","metaData":{},"id":"consumable_depleted_cleaning_sensor","timestamp":"2026-01-31T12:25:05.847Z","processed":false,"type":"cleaning","subType":"sensor"},"icon":"mdi:bell","friendly_name":"Dreame L10 Pro Events"},"last_changed":"2026-01-31T12:23:06.380735+00:00","last_reported":"2026-01-31T12:25:05.990538+00:00","last_updated":"2026-01-31T12:25:05.990538+00:00","context":{"id":"01KGA0766632FQPX88R21EDJYE","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_l10pro_sensor_cleaning_2","state":"0","attributes":{"unit_of_measurement":"minutes","icon":"mdi:progress-wrench","friendly_name":"Dreame L10 Pro Sensor Cleaning"},"last_changed":"2026-01-31T12:23:06.381097+00:00","last_reported":"2026-01-31T12:23:06.381097+00:00","last_updated":"2026-01-31T12:23:06.381097+00:00","context":{"id":"01KGA03HCD2CVMPQFSYKSH68KE","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "minutes"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_tuinhuis_battery","state":"97","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"temperature_tuinhuis Battery"},"last_changed":"2026-01-31T12:23:41.481092+00:00","last_reported":"2026-01-31T12:23:41.481092+00:00","last_updated":"2026-01-31T12:23:41.481092+00:00","context":{"id":"01KGA04KN95N0CTEWW17HTG9B5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "97",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_tuinhuis_temperature","state":"14.97","attributes":{"state_class":"measurement","unit_of_measurement":"°C","device_class":"temperature","friendly_name":"temperature_tuinhuis Temperature"},"last_changed":"2026-01-31T12:23:41.481127+00:00","last_reported":"2026-01-31T12:23:41.481127+00:00","last_updated":"2026-01-31T12:23:41.481127+00:00","context":{"id":"01KGA04KN9RA0V4FK8N66STGP3","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "14.97",
+        "native_unit_of_measurement": "°C"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_tuinhuis_humidity","state":"77.78","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"humidity","friendly_name":"temperature_tuinhuis Humidity"},"last_changed":"2026-01-31T12:23:41.481076+00:00","last_reported":"2026-01-31T12:23:41.481076+00:00","last_updated":"2026-01-31T12:23:41.481076+00:00","context":{"id":"01KGA04KN9XQKR8M5Q9H78BN27","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "77.78",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_tuinhuis_pressure","state":"1008.5","attributes":{"state_class":"measurement","unit_of_measurement":"hPa","device_class":"atmospheric_pressure","friendly_name":"temperature_tuinhuis Atmospheric pressure"},"last_changed":"2026-01-31T12:23:41.480956+00:00","last_reported":"2026-01-31T12:23:41.480956+00:00","last_updated":"2026-01-31T12:23:41.480956+00:00","context":{"id":"01KGA04KN8WD6E3E7A812T7DKM","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1008.5",
+        "native_unit_of_measurement": "hPa"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.temperature_tuinhuis_voltage","state":"2995","attributes":{"state_class":"measurement","unit_of_measurement":"mV","device_class":"voltage","friendly_name":"temperature_tuinhuis Voltage"},"last_changed":"2026-01-31T12:23:41.481044+00:00","last_reported":"2026-01-31T12:23:41.481044+00:00","last_updated":"2026-01-31T12:23:41.481044+00:00","context":{"id":"01KGA04KN98H66SWZ7A1DSDMHT","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2995",
+        "native_unit_of_measurement": "mV"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.zigbee2mqtt_bridge_version","state":"2.7.2","attributes":{"icon":"mdi:zigbee","friendly_name":"Zigbee2MQTT Bridge Version"},"last_changed":"2026-01-31T12:23:06.372626+00:00","last_reported":"2026-01-31T12:23:06.372626+00:00","last_updated":"2026-01-31T12:23:06.372626+00:00","context":{"id":"01KGA03HC4APXJP44QKHM7VKCP","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "2.7.2",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.bed_schakelaar_janwiebe_battery","state":"1","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","friendly_name":"bed_schakelaar_janwiebe Battery"},"last_changed":"2026-01-31T12:23:41.509994+00:00","last_reported":"2026-01-31T12:23:41.509994+00:00","last_updated":"2026-01-31T12:23:41.509994+00:00","context":{"id":"01KGA04KP5FH857NZ3VXFM15YJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.lamp_overloop_color_options","state":"","attributes":{"icon":"mdi:palette","friendly_name":"lamp_overloop Color options"},"last_changed":"2026-01-31T12:23:41.480430+00:00","last_reported":"2026-01-31T12:23:41.480430+00:00","last_updated":"2026-01-31T12:23:41.480430+00:00","context":{"id":"01KGA04KN8J25N738XT7M4R8J5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_staande_vloerlamp_power","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"Keuken staande vloerlamp Power"},"last_changed":"2026-01-31T12:23:34.924927+00:00","last_reported":"2026-01-31T12:23:34.924927+00:00","last_updated":"2026-01-31T12:23:34.924927+00:00","context":{"id":"01KGA04D8CKM8NSFXGYZR2V83A","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_staande_vloerlamp_current","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"A","device_class":"current","friendly_name":"Keuken staande vloerlamp Current"},"last_changed":"2026-01-31T12:23:34.926074+00:00","last_reported":"2026-01-31T12:23:34.926074+00:00","last_updated":"2026-01-31T12:23:34.926074+00:00","context":{"id":"01KGA04D8EY69VPKRBEBGVSZ9Z","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "A"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_staande_vloerlamp_voltage","state":"232","attributes":{"state_class":"measurement","unit_of_measurement":"V","device_class":"voltage","friendly_name":"Keuken staande vloerlamp Voltage"},"last_changed":"2026-01-31T12:24:34.974424+00:00","last_reported":"2026-01-31T12:24:34.974424+00:00","last_updated":"2026-01-31T12:24:34.974424+00:00","context":{"id":"01KGA067WYXTMN04Q3WZEXMYBA","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "232",
+        "native_unit_of_measurement": "V"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_staande_vloerlamp_energy","state":"5.67","attributes":{"state_class":"total_increasing","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"Keuken staande vloerlamp Energy"},"last_changed":"2026-01-31T12:23:34.925074+00:00","last_reported":"2026-01-31T12:23:34.925074+00:00","last_updated":"2026-01-31T12:23:34.925074+00:00","context":{"id":"01KGA04D8D18MV3GVCBCC817C3","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "5.67",
+        "native_unit_of_measurement": "kWh"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_keukenblad_power","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"Keuken lamp keukenblad Power"},"last_changed":"2026-01-31T12:23:10.297051+00:00","last_reported":"2026-01-31T12:23:10.297051+00:00","last_updated":"2026-01-31T12:23:10.297051+00:00","context":{"id":"01KGA03N6S1GYB6QD5817AZYK3","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_keukenblad_current","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"A","device_class":"current","friendly_name":"Keuken lamp keukenblad Current"},"last_changed":"2026-01-31T12:23:10.297433+00:00","last_reported":"2026-01-31T12:23:10.297433+00:00","last_updated":"2026-01-31T12:23:10.297433+00:00","context":{"id":"01KGA03N6SV6KGJTCFQ0WQZK3Q","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "A"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_keukenblad_voltage","state":"231","attributes":{"state_class":"measurement","unit_of_measurement":"V","device_class":"voltage","friendly_name":"Keuken lamp keukenblad Voltage"},"last_changed":"2026-01-31T12:23:10.297534+00:00","last_reported":"2026-01-31T12:23:10.297534+00:00","last_updated":"2026-01-31T12:23:10.297534+00:00","context":{"id":"01KGA03N6SKK1V9ZDBNEP467H5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "231",
+        "native_unit_of_measurement": "V"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_keukenblad_energy","state":"1.12","attributes":{"state_class":"total_increasing","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"Keuken lamp keukenblad Energy"},"last_changed":"2026-01-31T12:23:10.296941+00:00","last_reported":"2026-01-31T12:23:10.296941+00:00","last_updated":"2026-01-31T12:23:10.296941+00:00","context":{"id":"01KGA03N6RHMMPTYGYN2M9PHG1","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1.12",
+        "native_unit_of_measurement": "kWh"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_map_segments","state":"0","attributes":{"icon":"mdi:vector-selection","friendly_name":"Valetudo V1 PunyCautiousParrot Map segments"},"last_changed":"2026-01-31T12:23:06.381437+00:00","last_reported":"2026-01-31T12:23:06.381437+00:00","last_updated":"2026-01-31T12:23:06.381437+00:00","context":{"id":"01KGA03HCDAHAC6JCW1SK0AQ1Q","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_events","state":"4","attributes":{"consumable_depleted_cleaning_sensor":{"__class":"ConsumableDepletedValetudoEvent","metaData":{},"id":"consumable_depleted_cleaning_sensor","timestamp":"2026-01-31T12:24:49.057Z","processed":false,"type":"cleaning","subType":"sensor"},"consumable_depleted_filter_main":{"__class":"ConsumableDepletedValetudoEvent","metaData":{},"id":"consumable_depleted_filter_main","timestamp":"2026-01-31T12:24:49.057Z","processed":false,"type":"filter","subType":"main"},"consumable_depleted_brush_side_right":{"__class":"ConsumableDepletedValetudoEvent","metaData":{},"id":"consumable_depleted_brush_side_right","timestamp":"2026-01-31T12:24:49.057Z","processed":false,"type":"brush","subType":"side_right"},"consumable_depleted_brush_main":{"__class":"ConsumableDepletedValetudoEvent","metaData":{},"id":"consumable_depleted_brush_main","timestamp":"2026-01-31T12:24:49.057Z","processed":false,"type":"brush","subType":"main"},"icon":"mdi:bell","friendly_name":"Valetudo V1 PunyCautiousParrot Events"},"last_changed":"2026-01-31T12:23:06.381993+00:00","last_reported":"2026-01-31T12:24:49.978628+00:00","last_updated":"2026-01-31T12:24:49.978628+00:00","context":{"id":"01KGA06PHTN7KZNKTK5G4SMRDK","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "4",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_main_brush","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"min","device_class":"duration","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Main Brush"},"last_changed":"2026-01-31T12:23:06.382102+00:00","last_reported":"2026-01-31T12:23:06.382102+00:00","last_updated":"2026-01-31T12:23:06.382102+00:00","context":{"id":"01KGA03HCEFHF98FHJTMEMJPD5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "min"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_right_brush","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"min","device_class":"duration","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Right Brush"},"last_changed":"2026-01-31T12:23:06.382724+00:00","last_reported":"2026-01-31T12:23:06.382724+00:00","last_updated":"2026-01-31T12:23:06.382724+00:00","context":{"id":"01KGA03HCETCPJ4H0XMPHCNGTX","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "min"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_main_filter","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"min","device_class":"duration","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Main Filter"},"last_changed":"2026-01-31T12:23:06.382892+00:00","last_reported":"2026-01-31T12:23:06.382892+00:00","last_updated":"2026-01-31T12:23:06.382892+00:00","context":{"id":"01KGA03HCE5DYYR2TWH2MGN0GC","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "min"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_sensor_cleaning","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"min","device_class":"duration","icon":"mdi:progress-wrench","friendly_name":"Valetudo V1 PunyCautiousParrot Sensor Cleaning"},"last_changed":"2026-01-31T12:23:06.383044+00:00","last_reported":"2026-01-31T12:23:06.383044+00:00","last_updated":"2026-01-31T12:23:06.383044+00:00","context":{"id":"01KGA03HCFFY52EGF3WJZ47ZQS","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "min"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_total_statistics_time","state":"1242479","attributes":{"state_class":"total_increasing","unit_of_measurement":"s","device_class":"duration","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Total Statistics Time"},"last_changed":"2026-01-31T12:23:06.383134+00:00","last_reported":"2026-01-31T12:23:06.383134+00:00","last_updated":"2026-01-31T12:23:06.383134+00:00","context":{"id":"01KGA03HCFV5K2WXG3WPJBQG57","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1242479",
+        "native_unit_of_measurement": "s"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_total_statistics_area","state":"187488400","attributes":{"state_class":"total_increasing","unit_of_measurement":"cm²","device_class":"area","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Total Statistics Area"},"last_changed":"2026-01-31T12:23:06.383630+00:00","last_reported":"2026-01-31T12:23:06.383630+00:00","last_updated":"2026-01-31T12:23:06.383630+00:00","context":{"id":"01KGA03HCFP4W5VZQM1FEYAN31","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "187488400",
+        "native_unit_of_measurement": "cm²"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_total_statistics_count","state":"900","attributes":{"state_class":"total_increasing","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Total Statistics Count"},"last_changed":"2026-01-31T12:23:06.383741+00:00","last_reported":"2026-01-31T12:23:06.383741+00:00","last_updated":"2026-01-31T12:23:06.383741+00:00","context":{"id":"01KGA03HCFN7CN17MA35CNRPDJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "900",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_current_statistics_time","state":"1810","attributes":{"state_class":"measurement","unit_of_measurement":"s","device_class":"duration","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Current Statistics Time"},"last_changed":"2026-01-31T12:24:50.001338+00:00","last_reported":"2026-01-31T12:24:50.001338+00:00","last_updated":"2026-01-31T12:24:50.001338+00:00","context":{"id":"01KGA06PJHYY85V3D2V3X2ST77","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "1810",
+        "native_unit_of_measurement": "s"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_current_statistics_area","state":"281225","attributes":{"state_class":"measurement","unit_of_measurement":"cm²","device_class":"area","icon":"mdi:equalizer","friendly_name":"Valetudo V1 PunyCautiousParrot Current Statistics Area"},"last_changed":"2026-01-31T12:24:19.663060+00:00","last_reported":"2026-01-31T12:24:19.663060+00:00","last_updated":"2026-01-31T12:24:19.663060+00:00","context":{"id":"01KGA05RYFSZJAPYVQWFKM27NJ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "281225",
+        "native_unit_of_measurement": "cm²"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_wi_fi_configuration","state":"-51","attributes":{"state_class":"measurement","ssid":"Dijk_I","ips":["192.168.30.40","fe80::36ce:ff:fee9:d2f4"],"frequency":"2.4ghz","signal":-51,"unit_of_measurement":"dBm","device_class":"signal_strength","icon":"mdi:wifi","friendly_name":"Valetudo V1 PunyCautiousParrot Wi-Fi configuration"},"last_changed":"2026-01-31T12:24:50.026495+00:00","last_reported":"2026-01-31T12:24:50.026495+00:00","last_updated":"2026-01-31T12:24:50.026495+00:00","context":{"id":"01KGA06PKAJBZYWJ4QNNQ17J0W","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "-51",
+        "native_unit_of_measurement": "dBm"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_status_flag","state":"none","attributes":{"icon":"mdi:flag","friendly_name":"Valetudo V1 PunyCautiousParrot Status Flag"},"last_changed":"2026-01-31T12:23:06.385022+00:00","last_reported":"2026-01-31T12:23:06.385022+00:00","last_updated":"2026-01-31T12:23:06.385022+00:00","context":{"id":"01KGA03HCH75RJDA111AH817C5","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "none",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_error","state":"No error","attributes":{"severity":{"kind":"none","level":"none"},"subsystem":"none","message":"","icon":"mdi:alert","friendly_name":"Valetudo V1 PunyCautiousParrot Error"},"last_changed":"2026-01-31T12:23:06.385646+00:00","last_reported":"2026-01-31T12:23:06.385646+00:00","last_updated":"2026-01-31T12:23:06.385646+00:00","context":{"id":"01KGA03HCHK29NH2A63CGFDR2Y","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "No error",
+        "native_unit_of_measurement": null
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.valetudo_punycautiousparrot_battery_level","state":"66","attributes":{"state_class":"measurement","unit_of_measurement":"%","device_class":"battery","icon":"mdi:battery","friendly_name":"Valetudo V1 PunyCautiousParrot Battery level"},"last_changed":"2026-01-31T12:24:08.323352+00:00","last_reported":"2026-01-31T12:24:08.323352+00:00","last_updated":"2026-01-31T12:24:08.323352+00:00","context":{"id":"01KGA05DW32B3CV0DY9Q3BW2XG","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "66",
+        "native_unit_of_measurement": "%"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_deurbel_power","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"W","device_class":"power","friendly_name":"Keuken_lamp_deurbel Power"},"last_changed":"2026-01-31T12:23:09.723436+00:00","last_reported":"2026-01-31T12:23:09.723436+00:00","last_updated":"2026-01-31T12:23:09.723436+00:00","context":{"id":"01KGA03MMVCMJ2TEDAY0A2NH9A","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "W"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_deurbel_current","state":"0","attributes":{"state_class":"measurement","unit_of_measurement":"A","device_class":"current","friendly_name":"Keuken_lamp_deurbel Current"},"last_changed":"2026-01-31T12:23:09.722997+00:00","last_reported":"2026-01-31T12:23:09.722997+00:00","last_updated":"2026-01-31T12:23:09.722997+00:00","context":{"id":"01KGA03MMTQZ7XSQ7WR3Q2M8RB","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0",
+        "native_unit_of_measurement": "A"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_deurbel_voltage","state":"232","attributes":{"state_class":"measurement","unit_of_measurement":"V","device_class":"voltage","friendly_name":"Keuken_lamp_deurbel Voltage"},"last_changed":"2026-01-31T12:24:09.795831+00:00","last_reported":"2026-01-31T12:24:09.795831+00:00","last_updated":"2026-01-31T12:24:09.795831+00:00","context":{"id":"01KGA05FA3QB5KZM8QFWYSDKEB","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "232",
+        "native_unit_of_measurement": "V"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"sensor.keuken_lamp_deurbel_energy","state":"0.59","attributes":{"state_class":"total_increasing","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"Keuken_lamp_deurbel Energy"},"last_changed":"2026-01-31T12:23:09.723666+00:00","last_reported":"2026-01-31T12:23:09.723666+00:00","last_updated":"2026-01-31T12:23:09.723666+00:00","context":{"id":"01KGA03MMVSQQP5HES4M06DPXZ","parent_id":null,"user_id":null}},
+      "extra_data": {
+        "native_value": "0.59",
+        "native_unit_of_measurement": "kWh"
+      },
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.shp13_switch01","state":"on","attributes":{"friendly_name":"shp13_switch01"},"last_changed":"2026-01-31T12:23:41.466115+00:00","last_reported":"2026-01-31T12:23:41.466115+00:00","last_updated":"2026-01-31T12:23:41.466115+00:00","context":{"id":"01KGA04KMT0ATCYSBZ557FSE8W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.shp13_switch02","state":"on","attributes":{"friendly_name":"shp13_switch02"},"last_changed":"2026-01-31T12:23:34.103172+00:00","last_reported":"2026-01-31T12:23:34.103172+00:00","last_updated":"2026-01-31T12:23:34.103172+00:00","context":{"id":"01KGA04CEQGVDAZRV4BNK7SCM9","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_tuinhuis_koelkast","state":"off","attributes":{"friendly_name":"switch_tuinhuis_koelkast"},"last_changed":"2026-01-31T12:23:41.477190+00:00","last_reported":"2026-01-31T12:23:41.477190+00:00","last_updated":"2026-01-31T12:23:41.477190+00:00","context":{"id":"01KGA04KN5VY41XQTMH907C448","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_tuinhuis_boiler","state":"off","attributes":{"friendly_name":"switch_tuinhuis_boiler"},"last_changed":"2026-01-31T12:23:41.493001+00:00","last_reported":"2026-01-31T12:23:41.493001+00:00","last_updated":"2026-01-31T12:23:41.493001+00:00","context":{"id":"01KGA04KNN5JW2G7916S8KNGVQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_mozaiek_lamp","state":"off","attributes":{"friendly_name":"keuken_mozaiek_lamp"},"last_changed":"2026-01-31T12:23:41.504389+00:00","last_reported":"2026-01-31T12:23:41.504389+00:00","last_updated":"2026-01-31T12:23:41.504389+00:00","context":{"id":"01KGA04KP0DF2JYYA4SWEYPRX6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_badkamer_beneden_kast","state":"on","attributes":{"friendly_name":"switch_badkamer_beneden_kast"},"last_changed":"2026-01-31T12:23:41.471300+00:00","last_reported":"2026-01-31T12:23:41.471300+00:00","last_updated":"2026-01-31T12:23:41.471300+00:00","context":{"id":"01KGA04KMZ9ZRK5HP1W8VA7C4J","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.led_strip_slaapkamer_do_not_disturb","state":"off","attributes":{"friendly_name":"led_strip_slaapkamer Do not disturb"},"last_changed":"2026-01-31T12:23:41.492625+00:00","last_reported":"2026-01-31T12:23:41.492625+00:00","last_updated":"2026-01-31T12:23:41.492625+00:00","context":{"id":"01KGA04KNMNSAHP82927FBX5GX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_poort","state":"off","attributes":{"friendly_name":"switch_poort"},"last_changed":"2026-01-31T12:23:41.510924+00:00","last_reported":"2026-01-31T12:23:41.510924+00:00","last_updated":"2026-01-31T12:23:41.510924+00:00","context":{"id":"01KGA04KP6Z05ZR1M9K4ZQ3TRY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_tuinhuis_ledstrip","state":"off","attributes":{"friendly_name":"switch_tuinhuis_ledstrip"},"last_changed":"2026-01-31T12:23:41.512282+00:00","last_reported":"2026-01-31T12:23:41.512282+00:00","last_updated":"2026-01-31T12:23:41.512282+00:00","context":{"id":"01KGA04KP8EM1BBGSWQS4CJZWD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_tuinhuis_kachel","state":"off","attributes":{"friendly_name":"switch_tuinhuis_kachel"},"last_changed":"2026-01-31T12:23:41.476677+00:00","last_reported":"2026-01-31T12:23:41.476677+00:00","last_updated":"2026-01-31T12:23:41.476677+00:00","context":{"id":"01KGA04KN448Y70E4TZVWMHJ27","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.zigbee2mqtt_bridge_permit_join","state":"off","attributes":{"icon":"mdi:human-greeting-proximity","friendly_name":"Zigbee2MQTT Bridge Permit join"},"last_changed":"2026-01-31T12:23:06.372552+00:00","last_reported":"2026-01-31T12:23:06.372552+00:00","last_updated":"2026-01-31T12:23:06.372552+00:00","context":{"id":"01KGA03HC4GB4EZWVS76746VSC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_kantoor","state":"on","attributes":{"friendly_name":"switch_kantoor"},"last_changed":"2026-01-31T12:23:41.519466+00:00","last_reported":"2026-01-31T12:23:41.519466+00:00","last_updated":"2026-01-31T12:23:41.519466+00:00","context":{"id":"01KGA04KPFE71Y6V1YD8TJNMRB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.switch_trapkast","state":"off","attributes":{"friendly_name":"switch_trapkast"},"last_changed":"2026-01-31T12:23:41.519851+00:00","last_reported":"2026-01-31T12:23:41.519851+00:00","last_updated":"2026-01-31T12:23:41.519851+00:00","context":{"id":"01KGA04KPF5EQ4Y5XG7GK60QNQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_staande_vloerlamp","state":"off","attributes":{"friendly_name":"Keuken staande vloerlamp"},"last_changed":"2026-01-31T12:23:34.926134+00:00","last_reported":"2026-01-31T12:23:34.926134+00:00","last_updated":"2026-01-31T12:23:34.926134+00:00","context":{"id":"01KGA04D8EKZP7XZ6DZD0X0X7X","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_staande_vloerlamp_child_lock","state":"off","attributes":{"icon":"mdi:account-lock","friendly_name":"Keuken staande vloerlamp Child lock"},"last_changed":"2026-01-31T12:23:34.923905+00:00","last_reported":"2026-01-31T12:23:34.923905+00:00","last_updated":"2026-01-31T12:23:34.923905+00:00","context":{"id":"01KGA04D8BN00V4ZX6JQCNZDWZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_lamp_keukenblad","state":"off","attributes":{"friendly_name":"Keuken lamp keukenblad"},"last_changed":"2026-01-31T12:23:10.297573+00:00","last_reported":"2026-01-31T12:23:10.297573+00:00","last_updated":"2026-01-31T12:23:10.297573+00:00","context":{"id":"01KGA03N6SM1XGGEXN5DAPAHWA","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_lamp_keukenblad_child_lock","state":"off","attributes":{"icon":"mdi:account-lock","friendly_name":"Keuken lamp keukenblad Child lock"},"last_changed":"2026-01-31T12:23:10.297375+00:00","last_reported":"2026-01-31T12:23:10.297375+00:00","last_updated":"2026-01-31T12:23:10.297375+00:00","context":{"id":"01KGA03N6SHRHWD7YH27ZD22NG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_kerstverlichting","state":"on","attributes":{"friendly_name":"Keuken kerstverlichting"},"last_changed":"2026-01-31T12:23:41.511660+00:00","last_reported":"2026-01-31T12:23:41.511660+00:00","last_updated":"2026-01-31T12:23:41.511660+00:00","context":{"id":"01KGA04KP71VKMA4WNHVDCR2XE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.woonkamer_hoek_bank","state":"off","attributes":{"friendly_name":"Woonkamer hoek bank"},"last_changed":"2026-01-31T12:23:41.521275+00:00","last_reported":"2026-01-31T12:23:41.521275+00:00","last_updated":"2026-01-31T12:23:41.521275+00:00","context":{"id":"01KGA04KPHA19KPPMV0K9VXFWA","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.valetudo_punycautiousparrot_carpet_mode","state":"off","attributes":{"icon":"mdi:access-point","friendly_name":"Valetudo V1 PunyCautiousParrot Carpet Mode"},"last_changed":"2026-01-31T12:23:06.386659+00:00","last_reported":"2026-01-31T12:23:06.386659+00:00","last_updated":"2026-01-31T12:23:06.386659+00:00","context":{"id":"01KGA03HCJCSBFP403N73ADMYB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_lamp_deurbel","state":"off","attributes":{"friendly_name":"Keuken_lamp_deurbel"},"last_changed":"2026-01-31T12:23:09.722677+00:00","last_reported":"2026-01-31T12:23:09.722677+00:00","last_updated":"2026-01-31T12:23:09.722677+00:00","context":{"id":"01KGA03MMTS004M4E9KXWA0AZN","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"switch.keuken_lamp_deurbel_child_lock","state":"off","attributes":{"icon":"mdi:account-lock","friendly_name":"Keuken_lamp_deurbel Child lock"},"last_changed":"2026-01-31T12:23:09.723716+00:00","last_reported":"2026-01-31T12:23:09.723716+00:00","last_updated":"2026-01-31T12:23:09.723716+00:00","context":{"id":"01KGA03MMVWJ89G6TJHHMJ98NR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.switch_tuinhuis_koelkast","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587765297","in_progress":false,"latest_version":"587765297","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"switch_tuinhuis_koelkast","supported_features":5},"last_changed":"2026-01-31T12:23:41.477263+00:00","last_reported":"2026-01-31T12:23:41.477263+00:00","last_updated":"2026-01-31T12:23:41.477263+00:00","context":{"id":"01KGA04KN5481ZHYZGXCW09Y0H","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.ikea_remote01","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"-1","in_progress":false,"latest_version":"-1","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"ikea_remote01","supported_features":5},"last_changed":"2026-01-31T12:23:41.479191+00:00","last_reported":"2026-01-31T12:23:41.479191+00:00","last_updated":"2026-01-31T12:23:41.479191+00:00","context":{"id":"01KGA04KN772NBM68WZNSRE09G","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.ikea_lamp_slaapkamer","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587806257","in_progress":false,"latest_version":"587806257","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"ikea_lamp_slaapkamer","supported_features":5},"last_changed":"2026-01-31T12:23:41.506327+00:00","last_reported":"2026-01-31T12:23:41.506327+00:00","last_updated":"2026-01-31T12:23:41.506327+00:00","context":{"id":"01KGA04KP2KAVWVWE3PG9B55G0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.switch_tuinhuis_boiler","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587765297","in_progress":false,"latest_version":"587765297","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"switch_tuinhuis_boiler","supported_features":5},"last_changed":"2026-01-31T12:23:41.493042+00:00","last_reported":"2026-01-31T12:23:41.493042+00:00","last_updated":"2026-01-31T12:23:41.493042+00:00","context":{"id":"01KGA04KNN5GV9FKK0V0ACGA2M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.lamp_slaapkamer","state":"on","attributes":{"auto_update":false,"display_precision":0,"installed_version":"16786690","in_progress":false,"latest_version":"16787202","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"lamp_slaapkamer","supported_features":5},"last_changed":"2026-01-31T12:23:41.513396+00:00","last_reported":"2026-01-31T12:23:41.513396+00:00","last_updated":"2026-01-31T12:23:41.513396+00:00","context":{"id":"01KGA04KP9SQG2W39737N2X146","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.switch_badkamer_beneden_kast","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587765297","in_progress":false,"latest_version":"587765297","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"switch_badkamer_beneden_kast","supported_features":5},"last_changed":"2026-01-31T12:23:41.471504+00:00","last_reported":"2026-01-31T12:23:41.471504+00:00","last_updated":"2026-01-31T12:23:41.471504+00:00","context":{"id":"01KGA04KMZVTEPTB82FARS1CCC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.lamp_kast_master_bedroom","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"16777220","in_progress":false,"latest_version":"16777220","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"lamp_kast_master_bedroom","supported_features":5},"last_changed":"2026-01-31T12:23:41.512602+00:00","last_reported":"2026-01-31T12:23:41.512602+00:00","last_updated":"2026-01-31T12:23:41.512602+00:00","context":{"id":"01KGA04KP8TPFEQ6HPHA01TW5A","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.bed_schakelaar_marielle","state":"on","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587699761","in_progress":false,"latest_version":"604241926","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"bed_schakelaar_marielle","supported_features":5},"last_changed":"2026-01-31T12:23:41.509531+00:00","last_reported":"2026-01-31T12:23:41.509531+00:00","last_updated":"2026-01-31T12:23:41.509531+00:00","context":{"id":"01KGA04KP51ZBZH5EXH3QBH7XW","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.bed_schakelaar_janwiebe","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"604241926","in_progress":false,"latest_version":"604241926","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"bed_schakelaar_janwiebe","supported_features":5},"last_changed":"2026-01-31T12:23:41.510029+00:00","last_reported":"2026-01-31T12:23:41.510029+00:00","last_updated":"2026-01-31T12:23:41.510029+00:00","context":{"id":"01KGA04KP6D3X29AJCCV1T28AN","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.switch_tuinhuis_kachel","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587765297","in_progress":false,"latest_version":"587765297","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"switch_tuinhuis_kachel","supported_features":5},"last_changed":"2026-01-31T12:23:41.476512+00:00","last_reported":"2026-01-31T12:23:41.476512+00:00","last_updated":"2026-01-31T12:23:41.476512+00:00","context":{"id":"01KGA04KN4AXZT8AAE1GDCVSFP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.switch_kantoor","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587765297","in_progress":false,"latest_version":"587765297","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"switch_kantoor","supported_features":5},"last_changed":"2026-01-31T12:23:41.519593+00:00","last_reported":"2026-01-31T12:23:41.519593+00:00","last_updated":"2026-01-31T12:23:41.519593+00:00","context":{"id":"01KGA04KPFQD4EARJZHFTHZ2C0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.lamp_overloop","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"587757105","in_progress":false,"latest_version":"587757105","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"lamp_overloop","supported_features":5},"last_changed":"2026-01-31T12:23:41.480202+00:00","last_reported":"2026-01-31T12:23:41.480202+00:00","last_updated":"2026-01-31T12:23:41.480202+00:00","context":{"id":"01KGA04KN8522FGBA2N6HTQ5Z7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.keuken_staande_vloerlamp","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"69","in_progress":false,"latest_version":"69","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"Keuken staande vloerlamp","supported_features":5},"last_changed":"2026-01-31T12:23:34.925701+00:00","last_reported":"2026-01-31T12:23:34.925701+00:00","last_updated":"2026-01-31T12:23:34.925701+00:00","context":{"id":"01KGA04D8DAHC8DFXS1YVNXX7P","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.keuken_lamp_keukenblad","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"-1","in_progress":false,"latest_version":"-1","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"Keuken lamp keukenblad","supported_features":5},"last_changed":"2026-01-31T12:23:10.297194+00:00","last_reported":"2026-01-31T12:23:10.297194+00:00","last_updated":"2026-01-31T12:23:10.297194+00:00","context":{"id":"01KGA03N6SBT0MG1GQRRCRCFPJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    },
+    {
+      "state": {"entity_id":"update.keuken_lamp_deurbel","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"-1","in_progress":false,"latest_version":"-1","release_summary":null,"release_url":null,"skipped_version":null,"title":null,"update_percentage":null,"device_class":"firmware","entity_picture":"https://github.com/Koenkk/zigbee2mqtt/raw/master/images/logo.png","friendly_name":"Keuken_lamp_deurbel","supported_features":5},"last_changed":"2026-01-31T12:23:09.723577+00:00","last_reported":"2026-01-31T12:23:09.723577+00:00","last_updated":"2026-01-31T12:23:09.723577+00:00","context":{"id":"01KGA03MMV9G1GZFQ49RB3239G","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2026-01-31T12:25:08.806908+00:00"
+    }
+  ]
+}

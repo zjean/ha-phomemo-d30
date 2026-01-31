@@ -1,0 +1,17 @@
+# Home Assistant Configuration for Phomemo D30 Testing
+
+default_config:
+
+# Enable logger for debugging
+logger:
+  default: info
+  logs:
+    custom_components.phomemo_d30: debug
+
+# Enable Bluetooth (if available)
+bluetooth:
+
+# HTTP Configuration
+http:
+  server_host: 0.0.0.0
+  server_port: 8123

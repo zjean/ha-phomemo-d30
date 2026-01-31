@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 5,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {"created_at":"2026-01-31T12:19:49.351414+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"sun","entry_id":"01KG9ZXGZ7RN97B0WBDZBAMB64","minor_version":1,"modified_at":"2026-01-31T12:19:49.351417+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"import","subentries":[],"title":"Sun","unique_id":null,"version":1},
+      {"created_at":"2026-01-31T12:19:49.841867+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"go2rtc","entry_id":"01KG9ZXHEH0M81PJQDRZTYFYT0","minor_version":1,"modified_at":"2026-01-31T12:19:49.841870+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"go2rtc","unique_id":null,"version":1},
+      {"created_at":"2026-01-31T12:19:49.848534+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"backup","entry_id":"01KG9ZXHERW0KVP0S00Z45QK0R","minor_version":1,"modified_at":"2026-01-31T12:19:49.848536+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"system","subentries":[],"title":"Backup","unique_id":null,"version":1},
+      {"created_at":"2026-01-31T12:20:44.566057+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"shopping_list","entry_id":"01KG9ZZ6WPSBEM0QEQPAEN663C","minor_version":1,"modified_at":"2026-01-31T12:20:44.566061+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Shopping list","unique_id":"shopping_list","version":1},
+      {"created_at":"2026-01-31T12:20:44.646239+00:00","data":{},"disabled_by":null,"discovery_keys":{},"domain":"radio_browser","entry_id":"01KG9ZZ6Z6RQ9T6K5JYBAW32BD","minor_version":1,"modified_at":"2026-01-31T12:20:44.646241+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Radio Browser","unique_id":null,"version":1},
+      {"created_at":"2026-01-31T12:20:44.658683+00:00","data":{"language":"en","tld":"com"},"disabled_by":null,"discovery_keys":{},"domain":"google_translate","entry_id":"01KG9ZZ6ZJQFKDDVKDDSRFXQHV","minor_version":1,"modified_at":"2026-01-31T12:20:44.658685+00:00","options":{},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"onboarding","subentries":[],"title":"Google Translate text-to-speech","unique_id":null,"version":1},
+      {"created_at":"2026-01-31T12:21:19.161474+00:00","data":{"broker":"10.10.100.20","password":"fc626cc9ecb0d2b1557cb6519CALPZ$#@ZZZe91a2df82cfe06","port":1883,"username":"homeassistant"},"disabled_by":null,"discovery_keys":{},"domain":"mqtt","entry_id":"01KGA008NSWVMBSK3V7CN4NF8P","minor_version":1,"modified_at":"2026-01-31T12:21:38.796963+00:00","options":{"birth_message":{"payload":"online","qos":0,"retain":false,"topic":"homeassistant/status"},"discovery":true,"discovery_prefix":"homeassistant","will_message":{"payload":"offline","qos":0,"retain":false,"topic":"homeassistant/status"}},"pref_disable_new_entities":false,"pref_disable_polling":false,"source":"user","subentries":[],"title":"10.10.100.20","unique_id":null,"version":2}
+    ]
+  }
+}
