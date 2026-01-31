@@ -217,6 +217,61 @@ tail -f config/home-assistant.log
   - Format Code
   - Lint Code
 
+## Bluetooth Printer Setup
+
+### Prerequisites
+
+1. **Enable Home Assistant's Bluetooth integration:**
+   - Go to: Settings → Devices & Services
+   - Click: Add Integration
+   - Search: Bluetooth
+   - Follow setup wizard
+
+2. **Power on your Phomemo D30 and enable Bluetooth pairing mode**
+
+### Configuration
+
+1. **Add the Phomemo D30 integration:**
+   - Go to: Settings → Devices & Services
+   - Click: Add Integration
+   - Search: Phomemo D30
+   - Select driver type: **Bluetooth** (for real D30 printer)
+   - Choose your printer from the discovered devices list
+   - Configure MQTT topic (default: `homeassistant/phomemo/print`)
+
+2. **If your printer doesn't appear:**
+   - Make sure it's powered on and in Bluetooth range
+   - Check that HA's Bluetooth integration is working: Settings → Devices & Services → Bluetooth
+   - Try restarting the D30 printer
+   - Ensure no other device is connected to the printer
+
+### Driver Selection
+
+You can configure multiple instances of the integration:
+
+- **Mock Driver** - For testing without hardware (saves images to disk)
+- **Bluetooth Driver** - For real D30 printer via Bluetooth
+
+Each instance can be configured with its own MQTT topic, allowing you to run both mock and real printers simultaneously for testing.
+
+### Bluetooth Printing
+
+Once configured, send print jobs via MQTT to your configured topic:
+
+```bash
+mosquitto_pub -h localhost -t "homeassistant/phomemo/print" -m '{
+  "image": "iVBORw0KGgoAAAANSUhEUgAAAAUA...",
+  "width": 50,
+  "height": 30
+}'
+```
+
+The integration will:
+1. Connect to the D30 via Bluetooth
+2. Process and convert the image to D30 format
+3. Send the data to the printer
+4. Handle reconnection if the connection is lost
+
 ## Troubleshooting
 
 ### Dev Container Won't Start
