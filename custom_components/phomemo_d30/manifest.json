@@ -7,6 +7,6 @@
   "documentation": "https://github.com/janwiebe/ha-phomemo-d30",
   "iot_class": "local_push",
   "license": "GPL-3.0-or-later",
-  "requirements": ["Pillow==10.1.0", "bleak>=0.21.0"],
+  "requirements": ["bleak>=0.21.0"],
   "version": "0.1.0"
 }
