@@ -34,8 +34,11 @@ async def test_setup_entry(hass: HomeAssistant, mock_config_entry):
     assert await hass.config_entries.async_setup(mock_config_entry.entry_id)
     await hass.async_block_till_done()
 
-    assert mock_config_entry.state == ConfigEntryState.LOADED
+    # Verify integration loaded successfully
     assert DOMAIN in hass.data
+    assert mock_config_entry.entry_id in hass.data[DOMAIN]
+    # Verify driver was instantiated
+    assert "driver" in hass.data[DOMAIN][mock_config_entry.entry_id]
 
 
 async def test_unload_entry(hass: HomeAssistant, mock_config_entry):

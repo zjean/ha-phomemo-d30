@@ -38,7 +38,8 @@ class MockConfigEntry(ConfigEntry):
 
     def set_state(self, state):
         """Set the entry state (for testing)."""
-        object.__setattr__(self, "_state", state)
+        # Directly modify __dict__ to bypass any property setters
+        vars(self)["_state"] = state
 
     def add_to_hass(self, hass):
         """Add entry to hass."""
