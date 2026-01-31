@@ -44,3 +44,16 @@ config/*.db-wal
 # OS
 .DS_Store
 Thumbs.db
+
+# Docker testing runtime data
+docker/ha_config/.storage/
+docker/ha_config/.HA_VERSION
+docker/ha_config/.ha_run.lock
+docker/ha_config/*.db
+docker/ha_config/*.db-shm
+docker/ha_config/*.db-wal
+docker/ha_config/*.log
+docker/ha_config/*.log.*
+docker/test_prints/
+docker/mosquitto/data/
+docker/mosquitto/log/
