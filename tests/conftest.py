@@ -1,8 +1,54 @@
 """Pytest fixtures for tests."""
 import asyncio
 from unittest.mock import AsyncMock, MagicMock, patch
+from typing import Any, Dict
 
 import pytest
+from homeassistant.config_entries import ConfigEntry
+
+
+class MockConfigEntry(ConfigEntry):
+    """Mock config entry for testing."""
+
+    def __init__(
+        self,
+        domain: str,
+        data: Dict[str, Any],
+        title: str = "Test Entry",
+        entry_id: str = "test_entry_id",
+        state=None,
+        **kwargs,
+    ):
+        """Initialize mock config entry."""
+        super().__init__(
+            version=1,
+            minor_version=1,
+            domain=domain,
+            title=title,
+            data=data,
+            source="user",
+            entry_id=entry_id,
+            discovery_keys={},
+            options={},
+            unique_id=kwargs.pop("unique_id", None),
+            **kwargs,
+        )
+        if state:
+            self._state = state
+
+    def set_state(self, state):
+        """Set the entry state (for testing)."""
+        object.__setattr__(self, "_state", state)
+
+    def add_to_hass(self, hass):
+        """Add entry to hass."""
+        if not hasattr(hass.config_entries, "_store") or not isinstance(hass.config_entries._store, dict):
+            hass.config_entries._store = {}
+        hass.config_entries._store[self.entry_id] = self
+
+        # Also add to _mock_entries if it exists
+        if hasattr(hass.config_entries, "_mock_entries"):
+            hass.config_entries._mock_entries.append(self)
 
 
 @pytest.fixture
@@ -106,6 +152,47 @@ def hass(event_loop):
     flow_manager.async_configure = async_configure
 
     hass_mock.config_entries.flow = flow_manager
+
+    async def async_setup(entry_id):
+        """Mock async_setup for config entry."""
+        from custom_components.phomemo_d30 import async_setup_entry
+        from homeassistant.config_entries import ConfigEntryState
+
+        entry = hass_mock.config_entries._store.get(entry_id)
+        if not entry:
+            return False
+
+        result = await async_setup_entry(hass_mock, entry)
+        if result:
+            entry.set_state(ConfigEntryState.LOADED)
+        return result
+
+    async def async_unload(entry_id):
+        """Mock async_unload for config entry."""
+        from custom_components.phomemo_d30 import async_unload_entry
+        from homeassistant.config_entries import ConfigEntryState
+
+        entry = hass_mock.config_entries._store.get(entry_id)
+        if not entry:
+            return False
+
+        result = await async_unload_entry(hass_mock, entry)
+        if result:
+            entry.set_state(ConfigEntryState.NOT_LOADED)
+        return result
+
+    async def async_forward_entry_setups(entry, platforms):
+        """Mock forward entry setups."""
+        return True
+
+    async def async_unload_platforms(entry, platforms):
+        """Mock unload platforms."""
+        return True
+
+    hass_mock.config_entries.async_setup = async_setup
+    hass_mock.config_entries.async_unload = async_unload
+    hass_mock.config_entries.async_forward_entry_setups = async_forward_entry_setups
+    hass_mock.config_entries.async_unload_platforms = async_unload_platforms
 
     async def async_block_till_done():
         """Mock block till done."""

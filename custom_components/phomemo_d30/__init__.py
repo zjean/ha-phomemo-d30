@@ -25,7 +25,29 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up Phomemo D30 from a config entry."""
     hass.data.setdefault(DOMAIN, {})
-    hass.data[DOMAIN][entry.entry_id] = entry.data
+
+    # Instantiate appropriate driver based on config
+    mode = entry.data.get("mode", "mock")
+
+    if mode == "bluetooth":
+        # Import here to avoid dependency issues when not using Bluetooth
+        from .phomemo.bluetooth_driver import BluetoothPhomemoDriver
+        driver = BluetoothPhomemoDriver(
+            hass=hass,
+            mac_address=entry.data["bluetooth_mac"],
+        )
+    else:  # mock (default)
+        from .phomemo.driver import MockPhomemoDriver
+        driver = MockPhomemoDriver(
+            save_path=entry.data.get("mock_save_path", "/tmp/phomemo"),
+            print_delay=entry.data.get("mock_print_delay", 2.0),
+        )
+
+    # Store driver instance
+    hass.data[DOMAIN][entry.entry_id] = {
+        "driver": driver,
+        "config": entry.data,
+    }
 
     # Forward the setup to the sensor platform
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
@@ -39,5 +61,8 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     if unload_ok:
         hass.data[DOMAIN].pop(entry.entry_id)
+        # Remove domain if no entries remain
+        if not hass.data[DOMAIN]:
+            hass.data.pop(DOMAIN)
 
     return unload_ok
