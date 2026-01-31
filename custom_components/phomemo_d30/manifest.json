@@ -1,10 +1,11 @@
 {
   "domain": "phomemo_d30",
   "name": "Phomemo D30 Label Printer",
-  "codeowners": ["@janwiebe"],
+  "codeowners": ["@zjean"],
   "config_flow": true,
   "dependencies": ["mqtt", "bluetooth"],
-  "documentation": "https://github.com/janwiebe/ha-phomemo-d30",
+  "documentation": "https://github.com/zjean/ha-phomemo-d30",
+  "issue_tracker": "https://github.com/zjean/ha-phomemo-d30/issues",
   "iot_class": "local_push",
   "license": "GPL-3.0-or-later",
   "requirements": ["bleak>=0.21.0"],
