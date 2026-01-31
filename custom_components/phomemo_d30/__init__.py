@@ -75,13 +75,44 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     async def handle_mqtt_message(msg):
         """Handle incoming MQTT message."""
         try:
-            payload = json.loads(msg.payload)
+            # Check if payload is binary (raw image) or JSON
+            payload_bytes = msg.payload if isinstance(msg.payload, bytes) else msg.payload.encode()
+
+            # Try to detect if it's a raw PNG
+            if payload_bytes.startswith(b'\x89PNG'):
+                _LOGGER.error(
+                    "Received raw PNG data instead of JSON payload. "
+                    "Please send JSON with base64-encoded image: "
+                    '{"image": "base64string...", "width": 50, "height": 30}'
+                )
+                return
+
+            # Parse JSON payload
+            try:
+                payload = json.loads(payload_bytes)
+            except json.JSONDecodeError as e:
+                _LOGGER.error(
+                    "Invalid JSON in MQTT message: %s. "
+                    "Expected format: {\"image\": \"base64...\", \"width\": 50, \"height\": 30}",
+                    e
+                )
+                return
+
+            # Validate required fields
+            if "image" not in payload:
+                _LOGGER.error("MQTT payload missing required 'image' field")
+                return
 
             # Decode base64 image
             from PIL import Image
             from io import BytesIO
-            image_data = base64.b64decode(payload["image"])
-            image = Image.open(BytesIO(image_data))
+
+            try:
+                image_data = base64.b64decode(payload["image"])
+                image = Image.open(BytesIO(image_data))
+            except Exception as e:
+                _LOGGER.error("Failed to decode image from base64: %s", e)
+                return
 
             # Create print job
             job = PrintJob(
@@ -97,7 +128,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             _LOGGER.info("Added print job %s to queue from MQTT", job.id)
 
         except Exception as e:
-            _LOGGER.error("Error processing MQTT message: %s", e, exc_info=True)
+            _LOGGER.error("Unexpected error processing MQTT message: %s", e, exc_info=True)
 
     await mqtt.async_subscribe(hass, mqtt_topic, handle_mqtt_message, qos=1)
     _LOGGER.info("Subscribed to MQTT topic: %s", mqtt_topic)
