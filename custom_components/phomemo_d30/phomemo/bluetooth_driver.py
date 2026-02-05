@@ -9,6 +9,7 @@ import logging
 from typing import Optional
 
 from bleak import BleakClient
+from bleak_retry_connector import establish_connection
 from homeassistant.components import bluetooth
 from homeassistant.core import HomeAssistant
 
@@ -62,11 +63,14 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                     "Make sure the printer is powered on and in range."
                 )
 
-            # Create BleakClient and connect
-            self._client = BleakClient(ble_device)
-
+            # Use bleak-retry-connector for reliable connection
             _LOGGER.debug("Connecting to Bluetooth device %s", self._address)
-            await asyncio.wait_for(self._client.connect(), timeout=10.0)
+            self._client = await establish_connection(
+                BleakClient,
+                ble_device,
+                self._address,
+                max_attempts=3,
+            )
 
             self._connected = True
             _LOGGER.info("Connected to Bluetooth device %s", self._address)
