@@ -6,6 +6,7 @@ import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowResult
+from homeassistant.helpers import selector
 
 if TYPE_CHECKING:
     from homeassistant.components import bluetooth
@@ -131,19 +132,19 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         except ImportError:
             return self.async_abort(reason="bluetooth_not_available")
 
-        # Discover Phomemo devices
+        # Discover all Bluetooth devices
         discovered_devices = bluetooth.async_discovered_service_info(self.hass)
 
-        # Filter for Phomemo devices
-        phomemo_devices = {}
+        # Add all devices with names
+        all_devices = {}
         for device in discovered_devices:
-            if device.name and "Phomemo" in device.name:
-                phomemo_devices[device.address] = f"{device.name} ({device.address})"
+            if device.name:
+                all_devices[device.address] = f"{device.name} ({device.address})"
 
-        if not phomemo_devices:
+        if not all_devices:
             return self.async_abort(reason="no_devices_found")
 
-        self._bluetooth_devices = phomemo_devices
+        self._bluetooth_devices = all_devices
         return await self.async_step_bluetooth()
 
     async def async_step_bluetooth(
@@ -180,7 +181,14 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         # Show Bluetooth configuration form
         data_schema = vol.Schema(
             {
-                vol.Required(CONF_BLUETOOTH_MAC): vol.In(self._bluetooth_devices),
+                vol.Required(CONF_BLUETOOTH_MAC): selector.SelectSelector(
+                    selector.SelectSelectorConfig(
+                        options=[
+                            selector.SelectOptionDict(value=mac, label=name)
+                            for mac, name in self._bluetooth_devices.items()
+                        ]
+                    )
+                ),
                 vol.Required(CONF_MQTT_TOPIC, default=DEFAULT_MQTT_TOPIC): str,
             }
         )
