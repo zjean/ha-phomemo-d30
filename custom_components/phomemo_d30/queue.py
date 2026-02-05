@@ -46,9 +46,10 @@ class PrintQueue:
         Raises:
             asyncio.QueueFull: If queue is full
         """
+        _LOGGER.debug("Adding job %s to queue (current size: %d/%d)", job.id, self.size(), self._max_size)
         job.status = JobStatus.QUEUED
         await self._queue.put(job)
-        _LOGGER.debug("Added job %s to queue (size=%d)", job.id, self.size())
+        _LOGGER.debug("Job %s added to queue (new size: %d)", job.id, self.size())
 
     async def start(self) -> None:
         """Start the queue worker."""
@@ -96,12 +97,17 @@ class PrintQueue:
 
     async def _process_queue(self) -> None:
         """Process jobs from the queue."""
+        _LOGGER.debug("Queue worker started, waiting for jobs")
         while self._running:
             try:
+                _LOGGER.debug("Waiting for next job (queue size: %d)", self.size())
                 job = await self._queue.get()
+                _LOGGER.debug("Got job %s from queue, processing", job.id)
                 await self._process_job(job)
                 self._queue.task_done()
+                _LOGGER.debug("Job %s processing complete, queue task done", job.id)
             except asyncio.CancelledError:
+                _LOGGER.debug("Queue worker cancelled")
                 break
             except Exception as e:
                 _LOGGER.exception("Unexpected error in queue worker: %s", e)
@@ -113,19 +119,22 @@ class PrintQueue:
             job: Job to process
         """
         _LOGGER.info("Processing job %s", job.id)
+        _LOGGER.debug("Job %s details: attempts=%d, max_attempts=%d, status=%s",
+                     job.id, job.attempts, job.max_attempts, job.status)
         job.status = JobStatus.PRINTING
 
         while True:
             try:
+                _LOGGER.debug("Calling driver.print() for job %s (attempt %d)", job.id, job.attempts + 1)
                 await self._driver.print(job)
                 job.status = JobStatus.COMPLETED
-                _LOGGER.info("Job %s completed", job.id)
+                _LOGGER.info("Job %s completed successfully", job.id)
                 break
 
             except RecoverableError as e:
                 job.attempts += 1
                 _LOGGER.warning(
-                    "Job %s failed (attempt %d/%d): %s",
+                    "Job %s failed with recoverable error (attempt %d/%d): %s",
                     job.id,
                     job.attempts,
                     job.max_attempts,
@@ -135,11 +144,13 @@ class PrintQueue:
                 if not job.can_retry():
                     job.status = JobStatus.FAILED
                     job.error = str(e)
-                    _LOGGER.error("Job %s failed after max retries", job.id)
+                    _LOGGER.error("Job %s failed after %d attempts (max: %d)",
+                                 job.id, job.attempts, job.max_attempts)
                     break
 
                 job.status = JobStatus.RETRYING
                 delay = self._retry_delay * (2 ** (job.attempts - 1))
+                _LOGGER.debug("Retrying job %s after %.1f second delay", job.id, delay)
                 await asyncio.sleep(delay)
                 job.status = JobStatus.PRINTING
 

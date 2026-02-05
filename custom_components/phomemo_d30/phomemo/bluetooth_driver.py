@@ -49,8 +49,10 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             FatalError: If Bluetooth device not found
             RecoverableError: If connection times out
         """
+        _LOGGER.debug("Attempting to connect to Bluetooth device %s", self._address)
         try:
             # Get BLE device from HA's Bluetooth integration
+            _LOGGER.debug("Looking up BLE device from HA Bluetooth")
             ble_device = bluetooth.async_ble_device_from_address(
                 self._hass,
                 self._address,
@@ -58,6 +60,7 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             )
 
             if ble_device is None:
+                _LOGGER.error("BLE device %s not found in HA Bluetooth", self._address)
                 raise FatalError(
                     f"Bluetooth device {self._address} not found. "
                     "Make sure the printer is powered on and in range."
@@ -118,27 +121,36 @@ class BluetoothPhomemoDriver(PhomemoDriver):
 
         try:
             # Preprocess image (run in thread pool to avoid blocking)
+            _LOGGER.debug("Preprocessing image: size=%s, mode=%s", job.image.size, job.image.mode)
             processed_image = await asyncio.to_thread(
                 protocol.preprocess_image,
                 job.image,
             )
+            _LOGGER.debug("Preprocessed image: size=%s, mode=%s", processed_image.size, processed_image.mode)
 
             # Encode to D30 protocol bytes
+            _LOGGER.debug("Encoding print command with darkness=%d", job.darkness)
             print_data = await asyncio.to_thread(
                 protocol.encode_print_command,
                 processed_image,
             )
 
             _LOGGER.debug(
-                "Sending %d bytes to printer %s",
+                "Sending %d bytes to printer %s in %d-byte chunks",
                 len(print_data),
                 self._address,
+                512,
             )
 
             # Split into chunks (BLE MTU limits, typically 512 bytes)
             chunk_size = 512
+            total_chunks = (len(print_data) + chunk_size - 1) // chunk_size
+            _LOGGER.debug("Sending data in %d chunks", total_chunks)
+
             for i in range(0, len(print_data), chunk_size):
                 chunk = print_data[i : i + chunk_size]
+                chunk_num = i // chunk_size + 1
+                _LOGGER.debug("Sending chunk %d/%d (%d bytes)", chunk_num, total_chunks, len(chunk))
                 await self._client.write_gatt_char(
                     self._write_characteristic,
                     chunk,
@@ -147,7 +159,8 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                 # Small delay to avoid overwhelming the printer
                 await asyncio.sleep(0.01)
 
-            _LOGGER.info("Bluetooth driver: job %s completed", job.id)
+            _LOGGER.info("Bluetooth driver: job %s completed successfully", job.id)
+            _LOGGER.debug("Total bytes sent: %d", len(print_data))
 
         except ValueError as e:
             raise FatalError(f"Invalid image format: {e}") from e

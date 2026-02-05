@@ -79,9 +79,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             msg.topic,
             len(msg.payload) if msg.payload else 0
         )
+        _LOGGER.debug("Message QoS: %s, Retain: %s", msg.qos, msg.retain)
         try:
             # Check if payload is binary (raw image) or JSON
             payload_bytes = msg.payload if isinstance(msg.payload, bytes) else msg.payload.encode()
+            _LOGGER.debug("Payload type: %s, first 20 bytes: %s", type(msg.payload), payload_bytes[:20])
 
             from PIL import Image
             from io import BytesIO
@@ -128,8 +130,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
                 # Decode base64 image
                 try:
+                    _LOGGER.debug("Decoding base64 image (length: %d chars)", len(payload["image"]))
                     image_data = base64.b64decode(payload["image"])
+                    _LOGGER.debug("Decoded image data: %d bytes", len(image_data))
                     image = Image.open(BytesIO(image_data))
+                    _LOGGER.debug("Opened image: format=%s, size=%s, mode=%s", image.format, image.size, image.mode)
                 except Exception as e:
                     _LOGGER.error("Failed to decode image from base64: %s", e)
                     return
