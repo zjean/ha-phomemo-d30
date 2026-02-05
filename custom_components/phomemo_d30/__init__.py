@@ -39,7 +39,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         from .phomemo.bluetooth_driver import BluetoothPhomemoDriver
         driver = BluetoothPhomemoDriver(
             hass=hass,
-            mac_address=entry.data["bluetooth_mac"],
+            bluetooth_address=entry.data["bluetooth_mac"],
         )
     else:  # mock (default)
         from .phomemo.driver import MockPhomemoDriver
