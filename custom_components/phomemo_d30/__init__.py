@@ -74,6 +74,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     async def handle_mqtt_message(msg):
         """Handle incoming MQTT message."""
+        _LOGGER.info(
+            "Received MQTT message on topic %s (payload size: %d bytes)",
+            msg.topic,
+            len(msg.payload) if msg.payload else 0
+        )
         try:
             # Check if payload is binary (raw image) or JSON
             payload_bytes = msg.payload if isinstance(msg.payload, bytes) else msg.payload.encode()
@@ -84,9 +89,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             # Check if it's a raw image file (PNG, JPG, etc.)
             if payload_bytes.startswith(b'\x89PNG') or payload_bytes.startswith(b'\xff\xd8\xff'):
                 # Raw image data - open directly
+                _LOGGER.info("Detected raw image data (PNG or JPEG)")
                 try:
                     image = Image.open(BytesIO(payload_bytes))
-                    _LOGGER.info("Received raw image file (%s)", image.format)
+                    _LOGGER.info("Opened raw image file: format=%s, size=%s", image.format, image.size)
                 except Exception as e:
                     _LOGGER.error("Failed to open raw image data: %s", e)
                     return
@@ -99,10 +105,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                     darkness=entry.data.get("darkness", 5),
                     rotate=0,
                 )
+                _LOGGER.info("Created print job %s from raw image", job.id)
             else:
                 # JSON payload with base64-encoded image
+                _LOGGER.info("Attempting to parse payload as JSON")
                 try:
                     payload = json.loads(payload_bytes)
+                    _LOGGER.info("Successfully parsed JSON payload")
                 except json.JSONDecodeError as e:
                     _LOGGER.error(
                         "Invalid MQTT payload: not a valid image file or JSON. "
@@ -133,10 +142,15 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
                     darkness=payload.get("darkness", entry.data.get("darkness", 5)),
                     rotate=payload.get("rotate", 0),
                 )
+                _LOGGER.info(
+                    "Created print job %s from JSON (size=%s, darkness=%d)",
+                    job.id, image.size, job.darkness
+                )
 
             # Add to queue
+            _LOGGER.info("Adding job %s to print queue (current size: %d)", job.id, queue.size())
             await queue.add_job(job)
-            _LOGGER.info("Added print job %s to queue from MQTT", job.id)
+            _LOGGER.info("Successfully added print job %s to queue", job.id)
 
         except Exception as e:
             _LOGGER.error("Unexpected error processing MQTT message: %s", e, exc_info=True)
