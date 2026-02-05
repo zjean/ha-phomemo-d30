@@ -130,18 +130,28 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         try:
             from homeassistant.components import bluetooth
         except ImportError:
+            _LOGGER.error("Bluetooth component not available")
             return self.async_abort(reason="bluetooth_not_available")
 
         # Discover all Bluetooth devices
         discovered_devices = bluetooth.async_discovered_service_info(self.hass)
+        _LOGGER.info(
+            "Bluetooth discovery found %d total devices", len(discovered_devices)
+        )
 
         # Add all devices with names
         all_devices = {}
         for device in discovered_devices:
             if device.name:
                 all_devices[device.address] = f"{device.name} ({device.address})"
+                _LOGGER.debug(
+                    "Found Bluetooth device: %s (%s)", device.name, device.address
+                )
+
+        _LOGGER.info("Found %d devices with names for selection", len(all_devices))
 
         if not all_devices:
+            _LOGGER.warning("No Bluetooth devices with names found, aborting config flow")
             return self.async_abort(reason="no_devices_found")
 
         self._bluetooth_devices = all_devices
@@ -152,6 +162,11 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     ) -> FlowResult:
         """Handle Bluetooth device selection."""
         errors = {}
+
+        _LOGGER.info(
+            "Bluetooth step called with %d devices available",
+            len(self._bluetooth_devices)
+        )
 
         if user_input is not None:
             # Validate MQTT topic and device
@@ -179,15 +194,20 @@ class PhomemoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 )
 
         # Show Bluetooth configuration form
+        options_list = [
+            selector.SelectOptionDict(value=mac, label=name)
+            for mac, name in self._bluetooth_devices.items()
+        ]
+        _LOGGER.info(
+            "Creating SelectSelector with %d options: %s",
+            len(options_list),
+            [opt["label"] for opt in options_list]
+        )
+
         data_schema = vol.Schema(
             {
                 vol.Required(CONF_BLUETOOTH_MAC): selector.SelectSelector(
-                    selector.SelectSelectorConfig(
-                        options=[
-                            selector.SelectOptionDict(value=mac, label=name)
-                            for mac, name in self._bluetooth_devices.items()
-                        ]
-                    )
+                    selector.SelectSelectorConfig(options=options_list)
                 ),
                 vol.Required(CONF_MQTT_TOPIC, default=DEFAULT_MQTT_TOPIC): str,
             }
