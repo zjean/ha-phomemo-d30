@@ -186,7 +186,7 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                 await self._client.write_gatt_char(
                     self._write_characteristic,
                     chunk,
-                    response=False,  # Write without response for speed
+                    response=True,  # Write with response for reliability
                 )
                 _LOGGER.debug("  ✓ Chunk %d sent successfully", chunk_num)
             except Exception as e:
@@ -211,6 +211,9 @@ class BluetoothPhomemoDriver(PhomemoDriver):
         _LOGGER.info("Not connected, attempting to connect to printer")
         try:
             await self.connect()
+            # Give the Bluetooth stack time to stabilize after connection
+            _LOGGER.debug("Waiting 1 second for connection to stabilize")
+            await asyncio.sleep(1.0)
         except FatalError as e:
             # Convert FatalError to RecoverableError to allow retries
             # (printer might be turning on, coming into range, etc.)
