@@ -150,14 +150,26 @@ def encode_print_command(image: Image.Image, threshold: int = 127) -> list[bytes
     for chunk in _split_image(image, max_height=255):
         chunk_count += 1
         chunk_height = chunk.height
+        chunk_width = chunk.width
 
         _LOGGER.debug("Processing chunk %d: size=%s", chunk_count, chunk.size)
 
-        # Start with print command header (sniffed from Print Master app)
-        header_hex = '1f1124001b401d7630000c004001'
-        output = bytearray.fromhex(header_hex)
+        # Build print command header dynamically based on chunk size
+        # Format: 1f1124001b40 1d7630 00 WW_WW HH_HH
+        # Where WW_WW = width in bytes (LSB, MSB), HH_HH = height in lines (LSB, MSB)
+        width_bytes = chunk_width // 8
 
-        _LOGGER.debug("  Header bytes: %s (%d bytes)", header_hex, len(output))
+        output = bytearray()
+        output.extend(bytes.fromhex('1f1124001b40'))  # Command prefix + ESC @
+        output.extend(bytes.fromhex('1d763000'))      # GS v 0 0 (print raster bit image)
+        output.append(width_bytes & 0xFF)             # Width LSB
+        output.append((width_bytes >> 8) & 0xFF)      # Width MSB
+        output.append(chunk_height & 0xFF)            # Height LSB
+        output.append((chunk_height >> 8) & 0xFF)     # Height MSB
+
+        _LOGGER.debug("  Header: prefix + dimensions (%d bytes)", len(output))
+        _LOGGER.debug("  Width: %d bytes (%d dots), Height: %d lines",
+                     width_bytes, chunk_width, chunk_height)
 
         # Convert chunk to bits
         _LOGGER.debug("  Converting chunk to bits (threshold=%d)...", threshold)
