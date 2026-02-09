@@ -165,29 +165,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     _LOGGER.info("Subscribed to MQTT topic: %s", mqtt_topic)
 
     # Register test print service
-    async def handle_test_print(call):
-        """Handle test print service call."""
-        from datetime import datetime
+    def create_test_label(text: str, width_px: int, height_px: int, timestamp: str):
+        """Create test label image (runs in executor to avoid blocking)."""
         from PIL import Image, ImageDraw, ImageFont
-
-        _LOGGER.info("Test print service called")
-
-        # Get parameters from service call
-        text = call.data.get("text", "TEST LABEL")
-        width_mm = call.data.get("width", 50)
-        height_mm = call.data.get("height", 30)
-        darkness = call.data.get("darkness", entry.data.get("darkness", 5))
-        rotate = int(call.data.get("rotate", 0))
-
-        # Calculate pixel dimensions (assuming ~200 DPI)
-        # 50mm ≈ 384 pixels, 30mm ≈ 240 pixels
-        width_px = int(width_mm * 7.68)  # ~200 DPI conversion
-        height_px = int(height_mm * 8.0)
-
-        _LOGGER.debug(
-            "Creating test label: text='%s', size=%dx%d px (%dx%d mm), darkness=%d, rotate=%d",
-            text, width_px, height_px, width_mm, height_mm, darkness, rotate
-        )
 
         # Create test label image
         image = Image.new('RGB', (width_px, height_px), 'white')
@@ -218,7 +198,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         draw.text((text_x, text_y), text, fill='black', font=font)
 
         # Add timestamp
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
             small_font_size = font_size // 2
             small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", small_font_size)
@@ -233,6 +212,43 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         ts_width = bbox[2] - bbox[0]
         ts_x = (width_px - ts_width) // 2
         draw.text((ts_x, height_px - 40), timestamp, fill='black', font=small_font)
+
+        return image
+
+    async def handle_test_print(call):
+        """Handle test print service call."""
+        from datetime import datetime
+
+        _LOGGER.info("Test print service called")
+
+        # Get parameters from service call
+        text = call.data.get("text", "TEST LABEL")
+        width_mm = call.data.get("width", 50)
+        height_mm = call.data.get("height", 30)
+        darkness = call.data.get("darkness", entry.data.get("darkness", 5))
+        rotate = int(call.data.get("rotate", 0))
+
+        # Calculate pixel dimensions (assuming ~200 DPI)
+        # 50mm ≈ 384 pixels, 30mm ≈ 240 pixels
+        width_px = int(width_mm * 7.68)  # ~200 DPI conversion
+        height_px = int(height_mm * 8.0)
+
+        _LOGGER.debug(
+            "Creating test label: text='%s', size=%dx%d px (%dx%d mm), darkness=%d, rotate=%d",
+            text, width_px, height_px, width_mm, height_mm, darkness, rotate
+        )
+
+        # Generate timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        # Create test label image in executor (avoid blocking)
+        image = await hass.async_add_executor_job(
+            create_test_label,
+            text,
+            width_px,
+            height_px,
+            timestamp,
+        )
 
         # Create print job
         job = PrintJob(
