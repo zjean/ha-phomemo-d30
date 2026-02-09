@@ -99,6 +99,27 @@ class BluetoothPhomemoDriver(PhomemoDriver):
         """Check if connected to printer."""
         return self._connected and self._client is not None and self._client.is_connected
 
+    async def _send_data(self, data: bytes, chunk_size: int = 512) -> None:
+        """Send data to printer in BLE-sized chunks.
+
+        Args:
+            data: Bytes to send
+            chunk_size: Maximum bytes per BLE write (default: 512)
+        """
+        total_chunks = (len(data) + chunk_size - 1) // chunk_size
+
+        for i in range(0, len(data), chunk_size):
+            chunk = data[i : i + chunk_size]
+            chunk_num = i // chunk_size + 1
+            _LOGGER.debug("Sending BLE chunk %d/%d (%d bytes)", chunk_num, total_chunks, len(chunk))
+            await self._client.write_gatt_char(
+                self._write_characteristic,
+                chunk,
+                response=False,  # Write without response for speed
+            )
+            # Small delay to avoid overwhelming the printer
+            await asyncio.sleep(0.01)
+
     async def print(self, job: PrintJob) -> None:
         """Print a job via Bluetooth.
 
@@ -128,39 +149,31 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             )
             _LOGGER.debug("Preprocessed image: size=%s, mode=%s", processed_image.size, processed_image.mode)
 
-            # Encode to D30 protocol bytes
-            _LOGGER.debug("Encoding print command with darkness=%d", job.darkness)
-            print_data = await asyncio.to_thread(
+            # Send initialization packets (required before each print)
+            _LOGGER.debug("Sending initialization packets")
+            init_packets = protocol.get_initialization_packets()
+            for i, packet in enumerate(init_packets):
+                _LOGGER.debug("Sending init packet %d/%d (%d bytes)", i + 1, len(init_packets), len(packet))
+                await self._send_data(packet)
+
+            # Encode to D30 protocol bytes (returns list of commands, one per chunk)
+            _LOGGER.debug("Encoding print commands")
+            print_commands = await asyncio.to_thread(
                 protocol.encode_print_command,
                 processed_image,
             )
 
-            _LOGGER.debug(
-                "Sending %d bytes to printer %s in %d-byte chunks",
-                len(print_data),
-                self._address,
-                512,
-            )
+            _LOGGER.debug("Generated %d print command(s)", len(print_commands))
 
-            # Split into chunks (BLE MTU limits, typically 512 bytes)
-            chunk_size = 512
-            total_chunks = (len(print_data) + chunk_size - 1) // chunk_size
-            _LOGGER.debug("Sending data in %d chunks", total_chunks)
-
-            for i in range(0, len(print_data), chunk_size):
-                chunk = print_data[i : i + chunk_size]
-                chunk_num = i // chunk_size + 1
-                _LOGGER.debug("Sending chunk %d/%d (%d bytes)", chunk_num, total_chunks, len(chunk))
-                await self._client.write_gatt_char(
-                    self._write_characteristic,
-                    chunk,
-                    response=False,  # Write without response for speed
-                )
-                # Small delay to avoid overwhelming the printer
-                await asyncio.sleep(0.01)
+            # Send each print command
+            total_bytes = 0
+            for i, command in enumerate(print_commands):
+                _LOGGER.debug("Sending print command %d/%d (%d bytes)", i + 1, len(print_commands), len(command))
+                await self._send_data(command)
+                total_bytes += len(command)
 
             _LOGGER.info("Bluetooth driver: job %s completed successfully", job.id)
-            _LOGGER.debug("Total bytes sent: %d", len(print_data))
+            _LOGGER.debug("Total bytes sent: %d", total_bytes)
 
         except ValueError as e:
             raise FatalError(f"Invalid image format: {e}") from e

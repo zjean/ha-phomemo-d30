@@ -5,78 +5,90 @@ from PIL import Image
 from custom_components.phomemo_d30.phomemo.protocol import (
     preprocess_image,
     encode_print_command,
+    get_initialization_packets,
 )
 
 
+def test_get_initialization_packets():
+    """Test that initialization packets are returned correctly."""
+    packets = get_initialization_packets()
+
+    assert len(packets) == 7
+    assert all(isinstance(p, bytes) for p in packets)
+    # Verify first packet
+    assert packets[0] == bytes.fromhex('1f1138')
+    # Verify last packet
+    assert packets[6] == bytes.fromhex('1f110a1f110202')
+
+
 def test_preprocess_image_portrait():
-    """Test image preprocessing for portrait orientation (no rotation)."""
+    """Test image preprocessing for portrait orientation."""
     # Create a portrait test image (height > width)
     img = Image.new("RGB", (100, 200), color="white")
 
-    # Preprocess should resize to 384 width and convert to 1-bit
+    # Preprocess should resize to 96 width and convert to 1-bit
     processed = preprocess_image(img)
 
     assert processed.mode == "1"  # 1-bit black/white
-    assert processed.width == 384  # Resized to D30 width
-    # Height should maintain aspect ratio (200/100 * 384 = 768)
-    assert processed.height == 768
+    assert processed.width == 96  # Resized to D30 width
+    # Height should maintain aspect ratio (floor(96 / (100/200)) = floor(96 / 0.5) = floor(192))
+    assert processed.height == 192
 
 
 def test_preprocess_image_landscape():
-    """Test image preprocessing for landscape orientation (auto-rotate)."""
+    """Test image preprocessing for landscape orientation (no rotation in polskafan)."""
     # Create a landscape test image (width > height)
     img = Image.new("RGB", (200, 100), color="white")
 
-    # Preprocess should rotate, then resize to 384 width
+    # Preprocess should resize to 96 width (no rotation)
     processed = preprocess_image(img)
 
     assert processed.mode == "1"  # 1-bit black/white
-    assert processed.width == 384  # Resized to D30 width
-    # After rotation (100x200) and resize, height should be 200/100 * 384 = 768
-    assert processed.height == 768
+    assert processed.width == 96  # Resized to D30 width
+    # Height should maintain aspect ratio (floor(96 / (200/100)) = floor(96 / 2) = 48)
+    assert processed.height == 48
 
 
-def test_preprocess_image_already_384():
-    """Test image preprocessing when already at target width (portrait)."""
-    # Create portrait image already at 384 width (height > width, so no rotation)
-    img = Image.new("RGB", (384, 500), color="white")
+def test_preprocess_image_already_96():
+    """Test image preprocessing when already at target width."""
+    # Create image already at 96 width
+    img = Image.new("RGB", (96, 100), color="white")
 
     processed = preprocess_image(img)
 
     assert processed.mode == "1"
-    assert processed.width == 384
-    assert processed.height == 500  # Height unchanged (no resize needed)
+    assert processed.width == 96
+    # Height should maintain aspect ratio (floor(96 / (96/100)) = floor(100))
+    assert processed.height == 100
 
 
 def test_encode_print_command():
     """Test encoding a print command with image data."""
     # Create a simple 1-bit test image (must be mode '1')
-    img = Image.new("1", (384, 100), color=1)  # 384x100 white image
+    img = Image.new("1", (96, 100), color=1)  # 96x100 white image
 
-    # Encode the print command
-    data = encode_print_command(img)
+    # Encode the print command (returns list of commands)
+    commands = encode_print_command(img)
 
-    # Should return bytes
-    assert isinstance(data, bytes)
+    # Should return list
+    assert isinstance(commands, list)
+    assert len(commands) > 0
 
-    # Should contain data
-    assert len(data) > 0
+    # First command should be bytes
+    assert isinstance(commands[0], bytes)
 
-    # Should start with the Phomemo header
-    assert data.startswith(b'\x1b\x40\x1b\x61\x01\x1f\x11\x02\x04')
+    # Should start with the polskafan print command header
+    assert commands[0].startswith(bytes.fromhex('1f1124001b401d7630000c004001'))
 
-    # Should contain marker block with magic value 0x1d76 (little-endian)
-    assert b'\x1d\x76' in data
-
-    # Should end with footer sequences
-    assert b'\x1b\x64\x02' in data  # Feed command
-    assert data.endswith(b'\x1f\x11\x09')  # Final control sequence
+    # Should contain image data (96/8 = 12 bytes per line * 100 lines = 1200 bytes)
+    # Plus header (14 bytes) = 1214 bytes
+    assert len(commands[0]) == 1214
 
 
 def test_encode_print_command_requires_mode_1():
     """Test that encode_print_command requires mode '1' image."""
     # Create an RGB image (wrong mode)
-    img = Image.new("RGB", (384, 100), color="white")
+    img = Image.new("RGB", (96, 100), color="white")
 
     # Should raise ValueError for wrong mode
     with pytest.raises(ValueError, match="Image must be in mode '1'"):
@@ -84,35 +96,35 @@ def test_encode_print_command_requires_mode_1():
 
 
 def test_encode_print_command_chunks_large_image():
-    """Test that large images are properly chunked (>256 lines)."""
+    """Test that large images are properly chunked (>255 lines)."""
     # Create a tall image that will require multiple chunks
-    img = Image.new("1", (384, 512), color=1)  # 512 lines = 2 chunks
+    img = Image.new("1", (96, 512), color=1)  # 512 lines = 3 chunks (255+255+2)
 
-    data = encode_print_command(img)
+    commands = encode_print_command(img)
 
-    # Should contain two marker blocks (one per chunk)
-    # Each marker starts with 0x1d76
-    marker_count = data.count(b'\x1d\x76')
-    assert marker_count == 2  # Two chunks for 512 lines
+    # Should return 3 commands (one per chunk)
+    assert len(commands) == 3
+
+    # Each command should start with the print header
+    for cmd in commands:
+        assert cmd.startswith(bytes.fromhex('1f1124001b401d7630000c004001'))
 
 
-def test_line_feed_byte_substitution():
-    """Test that 0x0a bytes are substituted with 0x14."""
-    # Create a specific pattern that would generate 0x0a bytes
-    # This is a regression test for the critical bug fix
-    img = Image.new("1", (8, 1), color=1)  # 8 pixels = 1 byte per line
+def test_encode_print_command_exact_chunk_boundary():
+    """Test image exactly at chunk boundary (255 lines)."""
+    img = Image.new("1", (96, 255), color=1)
 
-    # Set pixels to create byte pattern 0x0a (00001010 in binary)
-    # Bit 0 (MSB): white, Bit 1: white, Bit 2: white, Bit 3: white
-    # Bit 4: black, Bit 5: white, Bit 6: black, Bit 7: white
-    img.putpixel((4, 0), 0)  # Black
-    img.putpixel((6, 0), 0)  # Black
+    commands = encode_print_command(img)
 
-    data = encode_print_command(img)
+    # Should return exactly 1 command
+    assert len(commands) == 1
 
-    # The line data should NOT contain 0x0a
-    assert b'\x0a' not in data or data.count(b'\x0a') == 0
 
-    # If the pattern would have created 0x0a, it should now be 0x14
-    # Note: This is hard to test directly without knowing the exact data structure
-    # But we can verify 0x0a doesn't appear in image data sections
+def test_encode_print_command_two_chunks():
+    """Test image requiring exactly 2 chunks (256 lines)."""
+    img = Image.new("1", (96, 256), color=1)
+
+    commands = encode_print_command(img)
+
+    # Should return 2 commands (255 + 1)
+    assert len(commands) == 2
