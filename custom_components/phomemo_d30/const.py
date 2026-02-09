@@ -45,6 +45,7 @@ PRINTER_STATUS_DISCONNECTED = "disconnected"
 
 # Services
 SERVICE_PRINT = "print"
+SERVICE_TEST_PRINT = "test_print"
 SERVICE_CLEAR_QUEUE = "clear_queue"
 SERVICE_RETRY_FAILED = "retry_failed"
 

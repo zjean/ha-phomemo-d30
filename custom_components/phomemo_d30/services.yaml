@@ -1,0 +1,127 @@
+test_print:
+  name: Test Print
+  description: Print a test label with custom text and timestamp
+  fields:
+    text:
+      name: Text
+      description: Text to display on the test label
+      required: false
+      default: "TEST LABEL"
+      example: "Hello World"
+      selector:
+        text:
+    width:
+      name: Width (mm)
+      description: Paper width in millimeters
+      required: false
+      default: 50
+      example: 50
+      selector:
+        number:
+          min: 10
+          max: 100
+          unit_of_measurement: "mm"
+    height:
+      name: Height (mm)
+      description: Paper height in millimeters
+      required: false
+      default: 30
+      example: 30
+      selector:
+        number:
+          min: 10
+          max: 100
+          unit_of_measurement: "mm"
+    darkness:
+      name: Darkness
+      description: Print darkness level (0-5, where 5 is darkest)
+      required: false
+      default: 5
+      selector:
+        number:
+          min: 0
+          max: 5
+          mode: slider
+    rotate:
+      name: Rotation
+      description: Rotation in degrees
+      required: false
+      default: 0
+      selector:
+        select:
+          options:
+            - label: "0°"
+              value: 0
+            - label: "90°"
+              value: 90
+            - label: "180°"
+              value: 180
+            - label: "270°"
+              value: 270
+
+print:
+  name: Print Label
+  description: Print a label from base64-encoded image data
+  fields:
+    image:
+      name: Image
+      description: Base64-encoded PNG image
+      required: true
+      example: "iVBORw0KGgoAAAANSUhEUg..."
+      selector:
+        text:
+          multiline: true
+    width:
+      name: Width (mm)
+      description: Paper width in millimeters
+      required: false
+      default: 50
+      selector:
+        number:
+          min: 10
+          max: 100
+          unit_of_measurement: "mm"
+    height:
+      name: Height (mm)
+      description: Paper height in millimeters
+      required: false
+      default: 30
+      selector:
+        number:
+          min: 10
+          max: 100
+          unit_of_measurement: "mm"
+    darkness:
+      name: Darkness
+      description: Print darkness level (0-5, where 5 is darkest)
+      required: false
+      default: 5
+      selector:
+        number:
+          min: 0
+          max: 5
+          mode: slider
+    rotate:
+      name: Rotation
+      description: Rotation in degrees
+      required: false
+      default: 0
+      selector:
+        select:
+          options:
+            - label: "0°"
+              value: 0
+            - label: "90°"
+              value: 90
+            - label: "180°"
+              value: 180
+            - label: "270°"
+              value: 270
+
+clear_queue:
+  name: Clear Print Queue
+  description: Remove all pending print jobs from the queue
+
+retry_failed:
+  name: Retry Failed Jobs
+  description: Retry all failed print jobs in the queue

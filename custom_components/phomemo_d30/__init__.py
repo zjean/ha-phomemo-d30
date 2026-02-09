@@ -11,7 +11,7 @@ from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.components import mqtt
 
-from .const import DOMAIN, PLATFORMS, CONF_MQTT_TOPIC
+from .const import DOMAIN, PLATFORMS, CONF_MQTT_TOPIC, SERVICE_TEST_PRINT
 from .queue import PrintQueue
 from .models import PrintJob
 
@@ -163,6 +163,96 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await mqtt.async_subscribe(hass, mqtt_topic, handle_mqtt_message, qos=1, encoding=None)
     _LOGGER.info("Subscribed to MQTT topic: %s", mqtt_topic)
 
+    # Register test print service
+    async def handle_test_print(call):
+        """Handle test print service call."""
+        from datetime import datetime
+        from PIL import Image, ImageDraw, ImageFont
+
+        _LOGGER.info("Test print service called")
+
+        # Get parameters from service call
+        text = call.data.get("text", "TEST LABEL")
+        width_mm = call.data.get("width", 50)
+        height_mm = call.data.get("height", 30)
+        darkness = call.data.get("darkness", entry.data.get("darkness", 5))
+        rotate = call.data.get("rotate", 0)
+
+        # Calculate pixel dimensions (assuming ~200 DPI)
+        # 50mm ≈ 384 pixels, 30mm ≈ 240 pixels
+        width_px = int(width_mm * 7.68)  # ~200 DPI conversion
+        height_px = int(height_mm * 8.0)
+
+        _LOGGER.debug(
+            "Creating test label: text='%s', size=%dx%d px (%dx%d mm), darkness=%d, rotate=%d",
+            text, width_px, height_px, width_mm, height_mm, darkness, rotate
+        )
+
+        # Create test label image
+        image = Image.new('RGB', (width_px, height_px), 'white')
+        draw = ImageDraw.Draw(image)
+
+        # Draw border
+        draw.rectangle([(5, 5), (width_px-5, height_px-5)], outline='black', width=3)
+
+        # Add main text
+        try:
+            font_size = min(width_px, height_px) // 8
+            font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", font_size)
+        except:
+            try:
+                # Try macOS font
+                font_size = min(width_px, height_px) // 8
+                font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", font_size)
+            except:
+                # Fall back to default
+                font = ImageFont.load_default()
+
+        # Center text
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+        text_x = (width_px - text_width) // 2
+        text_y = (height_px - text_height) // 2 - 20
+        draw.text((text_x, text_y), text, fill='black', font=font)
+
+        # Add timestamp
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            small_font_size = font_size // 2
+            small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", small_font_size)
+        except:
+            try:
+                small_font_size = font_size // 2
+                small_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", small_font_size)
+            except:
+                small_font = ImageFont.load_default()
+
+        bbox = draw.textbbox((0, 0), timestamp, font=small_font)
+        ts_width = bbox[2] - bbox[0]
+        ts_x = (width_px - ts_width) // 2
+        draw.text((ts_x, height_px - 40), timestamp, fill='black', font=small_font)
+
+        # Create print job
+        job = PrintJob(
+            image=image,
+            width=width_mm,
+            height=height_mm,
+            darkness=darkness,
+            rotate=rotate,
+        )
+
+        _LOGGER.info("Adding test print job %s to queue", job.id)
+        await queue.add_job(job)
+        _LOGGER.info("Test print job %s added successfully", job.id)
+
+    hass.services.async_register(
+        DOMAIN,
+        SERVICE_TEST_PRINT,
+        handle_test_print,
+    )
+    _LOGGER.info("Registered %s.%s service", DOMAIN, SERVICE_TEST_PRINT)
+
     # Forward the setup to platforms (if any)
     if PLATFORMS:
         await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
@@ -192,8 +282,10 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         # Remove entry data
         hass.data[DOMAIN].pop(entry.entry_id)
 
-        # Remove domain if no entries remain
+        # Remove domain and unregister services if no entries remain
         if not hass.data[DOMAIN]:
             hass.data.pop(DOMAIN)
+            hass.services.async_remove(DOMAIN, SERVICE_TEST_PRINT)
+            _LOGGER.info("Unregistered services")
 
     return unload_ok

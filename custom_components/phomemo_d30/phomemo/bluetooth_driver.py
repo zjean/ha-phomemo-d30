@@ -49,10 +49,13 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             FatalError: If Bluetooth device not found
             RecoverableError: If connection times out
         """
-        _LOGGER.debug("Attempting to connect to Bluetooth device %s", self._address)
+        _LOGGER.info("=== BLUETOOTH CONNECTION START ===")
+        _LOGGER.debug("Target address: %s", self._address)
+        _LOGGER.debug("Write characteristic UUID: %s", self._write_characteristic)
+
         try:
             # Get BLE device from HA's Bluetooth integration
-            _LOGGER.debug("Looking up BLE device from HA Bluetooth")
+            _LOGGER.debug("Looking up BLE device from HA Bluetooth integration")
             ble_device = bluetooth.async_ble_device_from_address(
                 self._hass,
                 self._address,
@@ -60,14 +63,20 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             )
 
             if ble_device is None:
-                _LOGGER.error("BLE device %s not found in HA Bluetooth", self._address)
+                _LOGGER.error("❌ BLE device %s not found in HA Bluetooth", self._address)
+                _LOGGER.error("Make sure the printer is powered on and in range")
+                _LOGGER.error("Check HA Settings -> Devices & Services -> Bluetooth")
                 raise FatalError(
                     f"Bluetooth device {self._address} not found. "
                     "Make sure the printer is powered on and in range."
                 )
 
+            _LOGGER.info("✓ Found BLE device: %s", ble_device)
+            _LOGGER.debug("BLE device name: %s", ble_device.name if hasattr(ble_device, 'name') else 'Unknown')
+            _LOGGER.debug("BLE device address: %s", ble_device.address if hasattr(ble_device, 'address') else 'Unknown')
+
             # Use bleak-retry-connector for reliable connection
-            _LOGGER.debug("Connecting to Bluetooth device %s", self._address)
+            _LOGGER.debug("Establishing connection with max_attempts=3...")
             self._client = await establish_connection(
                 BleakClient,
                 ble_device,
@@ -75,29 +84,67 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                 max_attempts=3,
             )
 
+            _LOGGER.debug("BleakClient created: %s", self._client)
+            _LOGGER.debug("Client is_connected: %s", self._client.is_connected)
+
+            # Log available services and characteristics
+            if self._client.is_connected:
+                try:
+                    services = self._client.services
+                    _LOGGER.debug("Available BLE services:")
+                    for service in services:
+                        _LOGGER.debug("  Service: %s", service.uuid)
+                        for char in service.characteristics:
+                            _LOGGER.debug("    Characteristic: %s (properties: %s)",
+                                         char.uuid, char.properties)
+                except Exception as e:
+                    _LOGGER.debug("Could not enumerate services: %s", e)
+
             self._connected = True
-            _LOGGER.info("Connected to Bluetooth device %s", self._address)
+            _LOGGER.info("✓ Successfully connected to Bluetooth device %s", self._address)
+            _LOGGER.info("=== BLUETOOTH CONNECTION COMPLETE ===")
 
         except asyncio.TimeoutError as e:
+            _LOGGER.error("❌ Connection timeout: %s", e)
+            _LOGGER.error("Check printer is in range and not connected to another device")
             raise RecoverableError(
                 f"Bluetooth connection timeout: {e}. Check printer range."
             ) from e
         except Exception as e:
+            _LOGGER.error("❌ Connection failed: %s", e, exc_info=True)
             raise RecoverableError(
                 f"Bluetooth connection failed: {e}"
             ) from e
 
     async def disconnect(self) -> None:
         """Disconnect from the printer."""
+        _LOGGER.info("=== BLUETOOTH DISCONNECT START ===")
+        _LOGGER.debug("Current connection state: %s", self._connected)
+        _LOGGER.debug("Client exists: %s", self._client is not None)
+
         if self._client and self._connected:
             _LOGGER.debug("Disconnecting from Bluetooth device %s", self._address)
-            await self._client.disconnect()
-            self._connected = False
-            _LOGGER.info("Disconnected from Bluetooth device %s", self._address)
+            try:
+                await self._client.disconnect()
+                self._connected = False
+                _LOGGER.info("✓ Disconnected from Bluetooth device %s", self._address)
+            except Exception as e:
+                _LOGGER.warning("Error during disconnect: %s", e)
+                self._connected = False
+        else:
+            _LOGGER.debug("No active connection to disconnect")
+
+        _LOGGER.info("=== BLUETOOTH DISCONNECT COMPLETE ===")
 
     def is_connected(self) -> bool:
         """Check if connected to printer."""
-        return self._connected and self._client is not None and self._client.is_connected
+        is_conn = self._connected and self._client is not None and self._client.is_connected
+        _LOGGER.debug("Connection check: _connected=%s, _client exists=%s, client.is_connected=%s → result=%s",
+                     self._connected, self._client is not None,
+                     self._client.is_connected if self._client else False,
+                     is_conn)
+        return is_conn
+
 
     async def _send_data(self, data: bytes, chunk_size: int = 512) -> None:
         """Send data to printer in BLE-sized chunks.
@@ -106,19 +153,50 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             data: Bytes to send
             chunk_size: Maximum bytes per BLE write (default: 512)
         """
+        if not self._client:
+            _LOGGER.error("❌ Cannot send data: BleakClient is None")
+            raise FatalError("BleakClient not initialized")
+
+        if not self._client.is_connected:
+            _LOGGER.error("❌ Cannot send data: BLE client not connected")
+            raise RecoverableError("BLE client disconnected")
+
         total_chunks = (len(data) + chunk_size - 1) // chunk_size
+        _LOGGER.debug("Preparing to send %d bytes in %d chunks (chunk_size=%d)",
+                     len(data), total_chunks, chunk_size)
+
+        # Log first bytes of data as hex preview
+        preview_len = min(32, len(data))
+        _LOGGER.debug("Data preview (first %d bytes): %s%s",
+                     preview_len,
+                     data[:preview_len].hex(),
+                     "..." if len(data) > preview_len else "")
 
         for i in range(0, len(data), chunk_size):
             chunk = data[i : i + chunk_size]
             chunk_num = i // chunk_size + 1
-            _LOGGER.debug("Sending BLE chunk %d/%d (%d bytes)", chunk_num, total_chunks, len(chunk))
-            await self._client.write_gatt_char(
-                self._write_characteristic,
-                chunk,
-                response=False,  # Write without response for speed
-            )
+
+            _LOGGER.debug("→ Sending BLE chunk %d/%d (%d bytes)",
+                         chunk_num, total_chunks, len(chunk))
+            _LOGGER.debug("  Chunk hex (first 16 bytes): %s%s",
+                         chunk[:16].hex(),
+                         "..." if len(chunk) > 16 else "")
+
+            try:
+                await self._client.write_gatt_char(
+                    self._write_characteristic,
+                    chunk,
+                    response=False,  # Write without response for speed
+                )
+                _LOGGER.debug("  ✓ Chunk %d sent successfully", chunk_num)
+            except Exception as e:
+                _LOGGER.error("❌ Failed to send chunk %d: %s", chunk_num, e, exc_info=True)
+                raise RecoverableError(f"BLE write failed on chunk {chunk_num}: {e}") from e
+
             # Small delay to avoid overwhelming the printer
             await asyncio.sleep(0.01)
+
+        _LOGGER.debug("✓ All %d chunks sent successfully", total_chunks)
 
     async def print(self, job: PrintJob) -> None:
         """Print a job via Bluetooth.
@@ -130,60 +208,100 @@ class BluetoothPhomemoDriver(PhomemoDriver):
             FatalError: Invalid image format, not connected
             RecoverableError: Connection timeout, BLE disconnection
         """
+        _LOGGER.info("=" * 60)
+        _LOGGER.info("=== BLUETOOTH PRINT START ===")
+        _LOGGER.info("Job ID: %s", job.id)
+        _LOGGER.info("Image size: %s", job.image.size)
+        _LOGGER.info("Image mode: %s", job.image.mode)
+        _LOGGER.info("Paper size: %dx%d mm", job.width, job.height)
+        _LOGGER.info("Darkness: %d", job.darkness)
+        _LOGGER.info("Rotation: %d°", job.rotate)
+        _LOGGER.info("=" * 60)
+
         if not self.is_connected():
+            _LOGGER.error("❌ Bluetooth driver not connected")
             raise FatalError("Bluetooth driver not connected")
 
-        _LOGGER.info(
-            "Bluetooth driver: printing job %s (width=%d, height=%d)",
-            job.id,
-            job.width,
-            job.height,
-        )
+        _LOGGER.debug("✓ Connection status verified")
 
         try:
             # Preprocess image (run in thread pool to avoid blocking)
-            _LOGGER.debug("Preprocessing image: size=%s, mode=%s", job.image.size, job.image.mode)
+            _LOGGER.info("Step 1/4: Preprocessing image...")
+            _LOGGER.debug("  Original size: %s", job.image.size)
+            _LOGGER.debug("  Original mode: %s", job.image.mode)
+            _LOGGER.debug("  Target width: 96 dots (D30 printer width)")
+
             processed_image = await asyncio.to_thread(
                 protocol.preprocess_image,
                 job.image,
             )
-            _LOGGER.debug("Preprocessed image: size=%s, mode=%s", processed_image.size, processed_image.mode)
+
+            _LOGGER.info("  ✓ Image preprocessed")
+            _LOGGER.debug("  Processed size: %s", processed_image.size)
+            _LOGGER.debug("  Processed mode: %s", processed_image.mode)
+            _LOGGER.debug("  Aspect ratio preserved: original=%s, processed=%s",
+                         job.image.size[0] / job.image.size[1] if job.image.size[1] > 0 else 'N/A',
+                         processed_image.size[0] / processed_image.size[1] if processed_image.size[1] > 0 else 'N/A')
 
             # Send initialization packets (required before each print)
-            _LOGGER.debug("Sending initialization packets")
+            _LOGGER.info("Step 2/4: Sending initialization packets...")
             init_packets = protocol.get_initialization_packets()
+            _LOGGER.debug("  Total init packets: %d", len(init_packets))
+
             for i, packet in enumerate(init_packets):
-                _LOGGER.debug("Sending init packet %d/%d (%d bytes)", i + 1, len(init_packets), len(packet))
+                _LOGGER.debug("  Init packet %d/%d: %d bytes, hex=%s",
+                             i + 1, len(init_packets), len(packet), packet.hex())
                 await self._send_data(packet)
 
+            _LOGGER.info("  ✓ All initialization packets sent")
+
             # Encode to D30 protocol bytes (returns list of commands, one per chunk)
-            _LOGGER.debug("Encoding print commands")
+            _LOGGER.info("Step 3/4: Encoding print commands...")
+            _LOGGER.debug("  Encoding image to D30 protocol format...")
+
             print_commands = await asyncio.to_thread(
                 protocol.encode_print_command,
                 processed_image,
             )
 
-            _LOGGER.debug("Generated %d print command(s)", len(print_commands))
+            _LOGGER.info("  ✓ Print commands encoded")
+            _LOGGER.debug("  Generated %d print command(s)", len(print_commands))
+            for i, cmd in enumerate(print_commands):
+                _LOGGER.debug("  Command %d: %d bytes", i + 1, len(cmd))
 
             # Send each print command
+            _LOGGER.info("Step 4/4: Sending print commands to printer...")
             total_bytes = 0
             for i, command in enumerate(print_commands):
-                _LOGGER.debug("Sending print command %d/%d (%d bytes)", i + 1, len(print_commands), len(command))
+                _LOGGER.debug("  Sending print command %d/%d (%d bytes)",
+                             i + 1, len(print_commands), len(command))
                 await self._send_data(command)
                 total_bytes += len(command)
+                _LOGGER.debug("  ✓ Print command %d sent", i + 1)
 
-            _LOGGER.info("Bluetooth driver: job %s completed successfully", job.id)
-            _LOGGER.debug("Total bytes sent: %d", total_bytes)
+            _LOGGER.info("  ✓ All print commands sent")
+            _LOGGER.info("=" * 60)
+            _LOGGER.info("=== BLUETOOTH PRINT COMPLETE ===")
+            _LOGGER.info("Job %s completed successfully", job.id)
+            _LOGGER.info("Total data sent: %d bytes", total_bytes)
+            _LOGGER.info("Init packets: %d bytes", sum(len(p) for p in init_packets))
+            _LOGGER.info("Print commands: %d bytes", total_bytes)
+            _LOGGER.info("=" * 60)
 
         except ValueError as e:
+            _LOGGER.error("❌ Invalid image format: %s", e, exc_info=True)
             raise FatalError(f"Invalid image format: {e}") from e
         except asyncio.TimeoutError as e:
+            _LOGGER.error("❌ Bluetooth write timeout: %s", e)
+            _LOGGER.error("Printer may be busy, out of range, or turned off")
             raise RecoverableError(
                 f"Bluetooth write timeout: {e}. Printer may be busy."
             ) from e
         except Exception as e:
             # BLE disconnection or other errors
+            _LOGGER.error("❌ Bluetooth print failed: %s", e, exc_info=True)
             self._connected = False
+            _LOGGER.error("Marked connection as disconnected, will retry")
             raise RecoverableError(
                 f"Bluetooth print failed: {e}. Will retry."
             ) from e
