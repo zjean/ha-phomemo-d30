@@ -23,7 +23,7 @@ _LOGGER = logging.getLogger(__name__)
 # D30 Bluetooth characteristics
 # Serial port service UUID (common for thermal printers)
 SERIAL_SERVICE_UUID = "0000ff00-0000-1000-8000-00805f9b34fb"
-WRITE_CHAR_UUID = "0000ff01-0000-1000-8000-00805f9b34fb"
+WRITE_CHAR_UUID = "0000ff02-0000-1000-8000-00805f9b34fb"  # ff02 is WRITE, ff01 is READ
 
 
 class BluetoothPhomemoDriver(PhomemoDriver):
@@ -158,12 +158,12 @@ class BluetoothPhomemoDriver(PhomemoDriver):
         return is_conn
 
 
-    async def _send_data(self, data: bytes, chunk_size: int = 512) -> None:
+    async def _send_data(self, data: bytes, chunk_size: int = 128) -> None:
         """Send data to printer in BLE-sized chunks.
 
         Args:
             data: Bytes to send
-            chunk_size: Maximum bytes per BLE write (default: 512)
+            chunk_size: Maximum bytes per BLE write (default: 128, matches Web Bluetooth reference)
         """
         if not self._client:
             _LOGGER.error("❌ Cannot send data: BleakClient is None")
@@ -198,7 +198,7 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                 await self._client.write_gatt_char(
                     self._write_characteristic,
                     chunk,
-                    response=False,  # Write without response (D30 doesn't support write-with-response)
+                    response=True,  # Write with response (matches Web Bluetooth reference implementation)
                 )
                 _LOGGER.debug("  ✓ Chunk %d sent successfully", chunk_num)
             except Exception as e:
