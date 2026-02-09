@@ -101,6 +101,18 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                     _LOGGER.debug("Could not enumerate services: %s", e)
 
             self._connected = True
+
+            # Verify write characteristic exists
+            try:
+                char = self._client.services.get_characteristic(self._write_characteristic)
+                if char:
+                    _LOGGER.info("✓ Found write characteristic: %s", self._write_characteristic)
+                    _LOGGER.debug("  Properties: %s", char.properties)
+                else:
+                    _LOGGER.warning("⚠️  Write characteristic %s not found", self._write_characteristic)
+            except Exception as e:
+                _LOGGER.debug("Could not verify characteristic: %s", e)
+
             _LOGGER.info("✓ Successfully connected to Bluetooth device %s", self._address)
             _LOGGER.info("=== BLUETOOTH CONNECTION COMPLETE ===")
 
@@ -186,7 +198,7 @@ class BluetoothPhomemoDriver(PhomemoDriver):
                 await self._client.write_gatt_char(
                     self._write_characteristic,
                     chunk,
-                    response=True,  # Write with response for reliability
+                    response=False,  # Write without response (D30 doesn't support write-with-response)
                 )
                 _LOGGER.debug("  ✓ Chunk %d sent successfully", chunk_num)
             except Exception as e:
