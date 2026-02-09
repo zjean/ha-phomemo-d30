@@ -177,7 +177,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         width_mm = call.data.get("width", 50)
         height_mm = call.data.get("height", 30)
         darkness = call.data.get("darkness", entry.data.get("darkness", 5))
-        rotate = call.data.get("rotate", 0)
+        rotate = int(call.data.get("rotate", 0))
 
         # Calculate pixel dimensions (assuming ~200 DPI)
         # 50mm ≈ 384 pixels, 30mm ≈ 240 pixels
