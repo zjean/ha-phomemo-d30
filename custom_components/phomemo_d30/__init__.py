@@ -48,14 +48,15 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             print_delay=entry.data.get("mock_print_delay", 2.0),
         )
 
-    # Connect the driver
-    await driver.connect()
+    # Note: We don't connect immediately to allow setup even if printer is off
+    # Connection will happen automatically on first print attempt
+    _LOGGER.info("Driver initialized (connection deferred until first print)")
 
     # Create print queue
     queue = PrintQueue(
         driver=driver,
         max_size=entry.data.get("queue_max_size", 50),
-        retry_attempts=entry.data.get("retry_attempts", 3),
+        retry_attempts=entry.data.get("retry_attempts", 5),
         retry_delay=entry.data.get("retry_delay", 5),
     )
 

@@ -198,6 +198,25 @@ class BluetoothPhomemoDriver(PhomemoDriver):
 
         _LOGGER.debug("✓ All %d chunks sent successfully", total_chunks)
 
+    async def _ensure_connected(self) -> None:
+        """Ensure we're connected to the printer, connecting if needed.
+
+        Raises:
+            RecoverableError: If connection fails (allows retry)
+        """
+        if self.is_connected():
+            _LOGGER.debug("Already connected to printer")
+            return
+
+        _LOGGER.info("Not connected, attempting to connect to printer")
+        try:
+            await self.connect()
+        except FatalError as e:
+            # Convert FatalError to RecoverableError to allow retries
+            # (printer might be turning on, coming into range, etc.)
+            _LOGGER.warning("Connection failed, will retry: %s", e)
+            raise RecoverableError(f"Connection failed: {e}") from e
+
     async def print(self, job: PrintJob) -> None:
         """Print a job via Bluetooth.
 
@@ -218,10 +237,8 @@ class BluetoothPhomemoDriver(PhomemoDriver):
         _LOGGER.info("Rotation: %d°", job.rotate)
         _LOGGER.info("=" * 60)
 
-        if not self.is_connected():
-            _LOGGER.error("❌ Bluetooth driver not connected")
-            raise FatalError("Bluetooth driver not connected")
-
+        # Ensure we're connected before printing
+        await self._ensure_connected()
         _LOGGER.debug("✓ Connection status verified")
 
         try:
